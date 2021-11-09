@@ -6,6 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 //Import the screens
 import MainScreen from './screens/mainScreen';
 import MapScreen from './screens/mapScreen';
+import ContactScreen from './screens/contactScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -21,6 +22,10 @@ export default function App() {
 
         <Drawer.Screen name="Kartta">
           {props => <MapScreen {...props} />}
+        </Drawer.Screen>
+
+        <Drawer.Screen name="Yhteydenotto">
+          {props => <ContactScreen {...props} />}
         </Drawer.Screen>
 
       </Drawer.Navigator>
