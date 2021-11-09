@@ -15,11 +15,11 @@ export default function App() {
     <NavigationContainer>
       <Drawer.Navigator initialRouteName="Etusivu">
 
-        <Drawer.Screen name="Etusivu" options={{ headerShown: false }}>
+        <Drawer.Screen name="Etusivu">
           {props => <MainScreen {...props} />}
         </Drawer.Screen>
 
-        <Drawer.Screen name="Kartta" options={{ headerShown: false }}>
+        <Drawer.Screen name="Kartta">
           {props => <MapScreen {...props} />}
         </Drawer.Screen>
 
