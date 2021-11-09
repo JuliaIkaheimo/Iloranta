@@ -8,10 +8,6 @@ import styles from '../styles/mapScreenStyle';
 
 export default function MapScreen() {
 
-//Setting the default region of the shown map - HAMK area (the other Delta can be 0)
-//It both are 0, zoom is quite close
-//const [mapRegion, setMapRegion]=useState({ latitude: 60.976, longitude: 24.48, latitudeDelta: 0, longitudeDelta: 0.0421 });
-
 //none,standard, satellite,hybrid,terrain (Android only),mutedStandard (iOS 11.0+ only)
 const [mapType, setMapType]=useState('satellite');
   
