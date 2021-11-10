@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
+import { Image} from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -15,16 +16,39 @@ export default function App() {
     <>
     <NavigationContainer>
       <Drawer.Navigator initialRouteName="Etusivu">
-
-        <Drawer.Screen name="Etusivu">
+      <Drawer.Screen name = "LOGO" options={{
+          headerShown: false,
+          drawerActiveTintColor:"white",
+          drawerLabelStyle:{color: "transparent"},
+          drawerIcon: () => (
+          <Image resizeMode="contain" style={{width:"100%"}} source={require('./assets/logo.png')}/>) }}>
+          {props => <MainScreen {...props} />}
+        </Drawer.Screen>
+      
+        <Drawer.Screen name = "Etusivu" options={{
+          headerShown: false,
+          drawerActiveTintColor:"#FBA00E",
+          drawerLabelStyle:{fontWeight: "bold", fontSize: 17},
+          drawerIcon: () => (
+          <Image style={{width:30, height:30}} source={require('./assets/star.png')}/>) }}>
           {props => <MainScreen {...props} />}
         </Drawer.Screen>
 
-        <Drawer.Screen name="Kartta">
+        <Drawer.Screen name = "Kartta" options={{ 
+          headerShown: false,
+          drawerActiveTintColor:"#FBA00E",
+          drawerLabelStyle:{fontWeight: "bold", fontSize: 17},
+          drawerIcon: () => (
+          <Image style={{width:30, height:30}} source={require('./assets/star.png')}/>) }}>
           {props => <MapScreen {...props} />}
         </Drawer.Screen>
 
-        <Drawer.Screen name="Yhteydenotto">
+        <Drawer.Screen name = "Yhteystiedot" options={{ 
+          headerShown: false,
+          drawerActiveTintColor:"#FBA00E",
+          drawerLabelStyle:{fontWeight: "bold", fontSize: 17},
+          drawerIcon: () => (
+          <Image style={{width:30, height:30}} source={require('./assets/star.png')}/>) }}>
           {props => <ContactScreen {...props} />}
         </Drawer.Screen>
 

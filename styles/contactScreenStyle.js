@@ -1,7 +1,6 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-
     //Containers
     container: {
       height: '100%',
@@ -21,18 +20,18 @@ export default StyleSheet.create({
         fontSize: 25,
         color: "#FCBC52",
         fontWeight: "bold",
-        marginTop: 20,
-        marginBottom: 20,
+        marginTop: 28,
+        marginBottom: 10,
     },
     h2: {
         fontSize: 20,
-        color: "#FCBC52",
+        color: "#36454F",
         fontWeight: "bold",
         margin: 10,
         textAlign: "center"
     },
     text: {
-        fontSize: 18,
+        fontSize: 22,
         color: "#36454F",
         margin: 5
     },
