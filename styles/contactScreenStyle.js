@@ -1,46 +1,63 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
+
+    //Containers
     container: {
       height: '100%',
-      justifyContent: "flex-start",
       alignItems: "center",
       backgroundColor: "white"
     },
     contactContainer: {
-        alignItems: "center",
+        alignItems: "center"
     },
+    iconContainer: {
+        flexDirection: "row",
+        alignItems: "center"
+    },
+
+    //Texts
     h1: {
         fontSize: 25,
         color: "#FCBC52",
         fontWeight: "bold",
-        margin: 10
+        marginTop: 20,
+        marginBottom: 20,
     },
     h2: {
         fontSize: 20,
         color: "#FCBC52",
         fontWeight: "bold",
-        margin: 10
+        margin: 10,
+        textAlign: "center"
     },
     text: {
-        fontSize: 16,
+        fontSize: 18,
         color: "#36454F",
         margin: 5
     },
+
+    //For the icons
     image:{
-        height: "30%",
-        width: "100%"
+        height: "30%"
     },
+    iconImage: {
+        height: 48,
+        width: 48,
+        margin: 15
+    },
+
+    //Call us -button
     button: {
         backgroundColor: "#FCBC52",
         alignItems: "center",
         padding: 10,
         borderRadius: 10,
-        marginTop: 10
+        marginTop: 20
     },
     buttonText: {
         color: "white",
         fontWeight: "bold",
-        fontSize: 15
+        fontSize: 20
     }
   });
