@@ -5,11 +5,10 @@ export default StyleSheet.create({
       height: '100%',
       justifyContent: "flex-start",
       alignItems: "center",
-      padding: 20,
       backgroundColor: "white"
     },
     contactContainer: {
-        alignItems: "center"
+        alignItems: "center",
     },
     h1: {
         fontSize: 25,
@@ -26,12 +25,22 @@ export default StyleSheet.create({
     text: {
         fontSize: 16,
         color: "#36454F",
-        margin: 10
+        margin: 5
+    },
+    image:{
+        height: "30%",
+        width: "100%"
     },
     button: {
         backgroundColor: "#FCBC52",
         alignItems: "center",
         padding: 10,
-        borderRadius: 10
+        borderRadius: 10,
+        marginTop: 10
+    },
+    buttonText: {
+        color: "white",
+        fontWeight: "bold",
+        fontSize: 15
     }
   });
