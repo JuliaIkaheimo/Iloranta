@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
     container: {
@@ -8,5 +8,10 @@ export default StyleSheet.create({
     mapStyle: {
         width: '100%',
         height: '100%'
-    }
+    },
+    markerStyle: {
+      borderRadius: 5,
+      height: 50,
+      width: 50,
+    },
   });
