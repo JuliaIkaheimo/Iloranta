@@ -3,6 +3,7 @@ import {Alert, View} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
+import * as Constants from 'expo';
 
 import styles from '../styles/mapScreenStyle';
 
@@ -36,6 +37,7 @@ const [mapType, setMapType]=useState('satellite');
           <MapView style={styles.mapStyle} 
             provider="google"
             mapType={mapType}
+            showsUserLocation={true}
             initialRegion={{ latitude: 61.202759, longitude: 24.626741, latitudeDelta: 0, longitudeDelta: 0.004 }}>
             <Marker
               coordinate={location}
