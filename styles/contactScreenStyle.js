@@ -25,26 +25,21 @@ export default StyleSheet.create({
         marginBottom: 25,
     },
     h2: {
-        fontSize: 20,
-        color: "#36454F",
+        fontSize: 22,
+        color: "#2F2F2F",
         fontWeight: "bold",
         margin: 10,
         textAlign: "center"
     },
     text: {
-        fontSize: 22,
-        color: "#36454F",
-        margin: 5
+        fontSize: 18,
+        color: "#2F2F2F",
+        marginBottom: 5
     },
 
-    //For the icons
+    //For the icon on top of the page
     image:{
-        height: "20%"
-    },
-    iconImage: {
-        height: 48,
-        width: 48,
-        margin: 15
+        height: "18%"
     },
 
     //Call us -button
