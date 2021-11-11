@@ -8,6 +8,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import MainScreen from './screens/mainScreen';
 import MapScreen from './screens/mapScreen';
 import ContactScreen from './screens/contactScreen';
+import CustomNavigation from './components/customNavigation';
 
 const Drawer = createDrawerNavigator();
 
@@ -15,15 +16,17 @@ export default function App() {
   return (
     <>
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Etusivu">
-      <Drawer.Screen name = "LOGO" options={{
-          headerShown: false,
+      <Drawer.Navigator >
+      <Drawer.Screen name = "etusivu1" options={{
+          focused: false,
+          activeBackgroundColor:"white",
           drawerActiveTintColor:"white",
           drawerLabelStyle:{color: "transparent"},
           drawerIcon: () => (
           <Image resizeMode="contain" style={{width:"100%"}} source={require('./assets/logo.png')}/>) }}>
           {props => <MainScreen {...props} />}
         </Drawer.Screen>
+       
       
         <Drawer.Screen name = "Etusivu" options={{
           headerShown: false,
@@ -35,7 +38,7 @@ export default function App() {
         </Drawer.Screen>
 
         <Drawer.Screen name = "Kartta" options={{ 
-          headerShown: false,
+          
           drawerActiveTintColor:"#FBA00E",
           drawerLabelStyle:{fontWeight: "bold", fontSize: 17},
           drawerIcon: () => (
@@ -50,7 +53,7 @@ export default function App() {
           drawerIcon: () => (
           <Image style={{width:30, height:30}} source={require('./assets/star.png')}/>) }}>
           {props => <ContactScreen {...props} />}
-        </Drawer.Screen>
+        </Drawer.Screen> 
 
       </Drawer.Navigator>
     </NavigationContainer>
