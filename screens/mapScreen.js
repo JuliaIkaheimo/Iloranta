@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import {Alert, View} from 'react-native';
-import MapView, {Marker} from 'react-native-maps';
+import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
-import * as Constants from 'expo';
 
 import styles from '../styles/mapScreenStyle';
+import locations from '../data/locations';
 
 export default function MapScreen() {
 
@@ -18,34 +18,39 @@ const [mapType, setMapType]=useState('satellite');
     const backGround = await Location.requestBackgroundPermissionsAsync();
     if (foreGround.status!=='granted' && backGround.status!=='granted'){
         Alert.alert('No permissions to use location', 
-            'You need to grant LOCATION perrmissions to use this app',
-            [{text:'Next time!'}]
+            'You need to grant LOCATION permissions to use this app',
+            [{text:'Ok'}]
         );
         return false;
     }
     else{
         return true;
     }
-  }    
-
-  //Test location
-  let location = {latitude: 61.202759, longitude: 24.626128};
+  }
 
   return (
-    <View style={styles.container}>
-      <View>            
-          <MapView style={styles.mapStyle} 
-            provider="google"
-            mapType={mapType}
-            showsUserLocation={true}
-            initialRegion={{ latitude: 61.202759, longitude: 24.626741, latitudeDelta: 0, longitudeDelta: 0.004 }}>
-            <Marker
-              coordinate={location}
-              title="Iloranta"
-              description="Iloranta is here"/> 
-          </MapView>
-        
-      </View>
+    <View style={styles.container}>           
+        <MapView style={styles.mapStyle} 
+          provider={PROVIDER_GOOGLE}
+          mapType="satellite"
+          annotations={locations}
+          showsUserLocation={true}
+          initialRegion={{ latitude: 61.202759, longitude: 24.626741, latitudeDelta: 0, longitudeDelta: 0.004 }}
+        >
+          {
+            locations.map(marker => (
+              <Marker
+                coordinate={{
+                  latitude: marker.coordinates.latitude,
+                  longitude: marker.coordinates.longitude,
+                }}
+                title = {marker.title}
+                description = {marker.description}
+                key = {marker.index}
+              />
+            ))
+          }
+        </MapView>
     </View>
   );
 }
