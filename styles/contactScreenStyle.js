@@ -4,6 +4,7 @@ export default StyleSheet.create({
     //Containers
     container: {
       height: '100%',
+      paddingTop: 10,
       alignItems: "center",
       backgroundColor: "white"
     },
@@ -20,8 +21,8 @@ export default StyleSheet.create({
         fontSize: 25,
         color: "#FCBC52",
         fontWeight: "bold",
-        marginTop: 28,
-        marginBottom: 10,
+        marginTop: 45,
+        marginBottom: 25,
     },
     h2: {
         fontSize: 20,
@@ -38,7 +39,7 @@ export default StyleSheet.create({
 
     //For the icons
     image:{
-        height: "30%"
+        height: "20%"
     },
     iconImage: {
         height: 48,
@@ -52,7 +53,7 @@ export default StyleSheet.create({
         alignItems: "center",
         padding: 10,
         borderRadius: 10,
-        marginTop: 20
+        marginTop: 25
     },
     buttonText: {
         color: "white",
