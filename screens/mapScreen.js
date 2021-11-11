@@ -34,6 +34,7 @@ const [mapType, setMapType]=useState('satellite');
           provider={PROVIDER_GOOGLE}
           mapType="satellite"
           annotations={locations}
+          showsUserLocation={true}
           initialRegion={{ latitude: 61.202759, longitude: 24.626741, latitudeDelta: 0, longitudeDelta: 0.004 }}
         >
           {
