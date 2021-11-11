@@ -3,7 +3,7 @@ import {View, TouchableHighlight, Image} from 'react-native';
 import styles from '../styles/contactScreenStyle';
 import * as Linking from 'expo-linking';
 
-export default function ContactScreen() {
+export default function SocialMediaButtons() {
     function openSocialMediaSite(site){
         //Open the social media site depending on the parameter value
         if (site == "facebook"){
