@@ -11,9 +11,9 @@ export default function ContactScreen() {
      }
     return(
         <View style={{paddingTop:50, paddingLeft: 30, backgroundColor: "white"}}>
-        <TouchableHighlight underlayColor="white" onPress={toggleMenu}>
-            <Image source={require('../assets/menuButton.png')} style={{ width: 35, height: 35 }} />
-        </TouchableHighlight>
-    </View>
+            <TouchableHighlight underlayColor="white" onPress={toggleMenu}>
+                <Image source={require('../assets/menuButton.png')} style={{ width: 35, height: 35 }} />
+            </TouchableHighlight>
+        </View>
     );
 }
