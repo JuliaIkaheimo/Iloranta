@@ -2,7 +2,7 @@ import React from 'react';
 import {View, TouchableHighlight, Image} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-export default function ContactScreen() {
+export default function MenuButton() {
      //For opening the menu
      const navigation = useNavigation();
 
