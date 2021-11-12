@@ -3,7 +3,7 @@ import {View, TouchableHighlight, Image} from 'react-native';
 import styles from '../styles/contactScreenStyle';
 import * as Linking from 'expo-linking';
 
-export default function ContactScreen() {
+export default function SocialMediaButtons(props) {
     function openSocialMediaSite(site){
         //Open the social media site depending on the parameter value
         if (site == "facebook"){
@@ -22,16 +22,16 @@ export default function ContactScreen() {
     return(
         <View style={styles.iconContainer}>
             <TouchableHighlight underlayColor="white" onPress={() => {openSocialMediaSite("facebook")}}>
-                <Image style={styles.iconImage} resizeMode="contain" source={require('../assets/facebook.png')}/>
+                <Image style={{width: props.width, height: props.height, margin: props.margin}} resizeMode="contain" source={require('../assets/facebook.png')}/>
             </TouchableHighlight>
             <TouchableHighlight underlayColor="white" onPress={() => {openSocialMediaSite("instagram")}}>
-                <Image style={styles.iconImage} resizeMode="contain" source={require('../assets/instagram.png')}/>
+                <Image style={{width: props.width, height: props.height, margin: props.margin}} resizeMode="contain" source={require('../assets/instagram.png')}/>
             </TouchableHighlight>
             <TouchableHighlight underlayColor="white" onPress={() => {openSocialMediaSite("youtube")}}>
-                <Image style={[styles.iconImage, {width: 60, height: 60}]} resizeMode="contain" source={require('../assets/youtube.png')}/>
+                <Image style={{width: props.width2, height: props.height2, margin: props.margin}} resizeMode="contain" source={require('../assets/youtube.png')}/>
             </TouchableHighlight>
             <TouchableHighlight underlayColor="white" onPress={() => {openSocialMediaSite("tripadvisor")}}>
-                <Image style={[styles.iconImage, {width: 60, height: 60}]} resizeMode="contain" source={require('../assets/tripadvisor.png')}/>
+                <Image style={{width: props.width2, height: props.height2, margin: props.margin}} resizeMode="contain" source={require('../assets/tripadvisor.png')}/>
             </TouchableHighlight>
         </View>
     );
