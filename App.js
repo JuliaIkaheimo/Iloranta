@@ -8,7 +8,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import MainScreen from './screens/mainScreen';
 import MapScreen from './screens/mapScreen';
 import ContactScreen from './screens/contactScreen';
-//import CustomNavigation from './components/customNavigation';
+import CustomNavigation from './components/customNavigation';
 
 const Drawer = createDrawerNavigator();
 
