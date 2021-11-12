@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {Alert, View} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
+import MenuButton from '../components/menuButton';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
 
@@ -31,19 +32,22 @@ const [mapType, setMapType]=useState('satellite');
   let location = {latitude: 61.202759, longitude: 24.626128};
 
   return (
-    <View style={styles.container}>
-      <View>            
-          <MapView style={styles.mapStyle} 
-            provider="google"
-            mapType={mapType}
-            initialRegion={{ latitude: 61.202759, longitude: 24.626741, latitudeDelta: 0, longitudeDelta: 0.004 }}>
-            <Marker
-              coordinate={location}
-              title="Iloranta"
-              description="Iloranta is here"/> 
-          </MapView>
-        
+    <>
+      <MenuButton />
+      <View style={styles.container}>
+        <View>            
+            <MapView style={styles.mapStyle} 
+              provider="google"
+              mapType={mapType}
+              initialRegion={{ latitude: 61.202759, longitude: 24.626741, latitudeDelta: 0, longitudeDelta: 0.004 }}>
+              <Marker
+                coordinate={location}
+                title="Iloranta"
+                description="Iloranta is here"/> 
+            </MapView>
+          
+        </View>
       </View>
-    </View>
+    </>
   );
 }
