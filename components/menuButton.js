@@ -10,7 +10,7 @@ export default function MenuButton() {
          navigation.toggleDrawer();
      }
     return(
-        <View style={{paddingTop:50, paddingLeft: 30, backgroundColor: "white"}}>
+        <View style={{paddingTop:50, paddingLeft: 30, paddingBottom: 20, backgroundColor: "white"}}>
             <TouchableHighlight underlayColor="white" onPress={toggleMenu}>
                 <Image source={require('../assets/menuButton.png')} style={{ width: 35, height: 35 }} />
             </TouchableHighlight>

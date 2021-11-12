@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {Alert, View} from 'react-native';
+
+import MenuButton from '../components/menuButton';
 import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
