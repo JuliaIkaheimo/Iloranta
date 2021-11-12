@@ -31,31 +31,28 @@ const [mapType, setMapType]=useState('satellite');
   }
 
   return (
-    <>
-        <MenuButton />
-        <View style={styles.container}>           
-            <MapView style={styles.mapStyle} 
-              provider={PROVIDER_GOOGLE}
-              mapType="satellite"
-              annotations={locations}
-              showsUserLocation={true}
-              initialRegion={{ latitude: 61.202759, longitude: 24.626741, latitudeDelta: 0, longitudeDelta: 0.004 }}
-            >
-              {
-                locations.map(marker => (
-                  <Marker
-                    coordinate={{
-                      latitude: marker.coordinates.latitude,
-                      longitude: marker.coordinates.longitude,
-                    }}
-                    title = {marker.title}
-                    description = {marker.description}
-                    key = {marker.index}
-                  />
-                ))
-              }
-            </MapView>
-        </View>
-    </>
+    <View style={styles.container}>           
+        <MapView style={styles.mapStyle} 
+          provider={PROVIDER_GOOGLE}
+          mapType="satellite"
+          annotations={locations}
+          showsUserLocation={true}
+          initialRegion={{ latitude: 61.202759, longitude: 24.626741, latitudeDelta: 0, longitudeDelta: 0.004 }}
+        >
+          {
+            locations.map(marker => (
+              <Marker
+                coordinate={{
+                  latitude: marker.coordinates.latitude,
+                  longitude: marker.coordinates.longitude,
+                }}
+                title = {marker.title}
+                description = {marker.description}
+                key = {marker.title}
+              />
+            ))
+          }
+        </MapView>
+    </View>
   );
 }
