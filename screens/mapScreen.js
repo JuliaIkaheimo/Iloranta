@@ -46,7 +46,7 @@ const [mapType, setMapType]=useState('satellite');
                 }}
                 title = {marker.title}
                 description = {marker.description}
-                key = {marker.index}
+                key = {marker.title}
               />
             ))
           }
