@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {Alert, View} from 'react-native';
+
+import MenuButton from '../components/menuButton';
 import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
@@ -29,28 +31,31 @@ const [mapType, setMapType]=useState('satellite');
   }
 
   return (
-    <View style={styles.container}>           
-        <MapView style={styles.mapStyle} 
-          provider={PROVIDER_GOOGLE}
-          mapType="satellite"
-          annotations={locations}
-          showsUserLocation={true}
-          initialRegion={{ latitude: 61.202759, longitude: 24.626741, latitudeDelta: 0, longitudeDelta: 0.004 }}
-        >
-          {
-            locations.map(marker => (
-              <Marker
-                coordinate={{
-                  latitude: marker.coordinates.latitude,
-                  longitude: marker.coordinates.longitude,
-                }}
-                title = {marker.title}
-                description = {marker.description}
-                key = {marker.index}
-              />
-            ))
-          }
-        </MapView>
-    </View>
+    <>
+        <MenuButton />
+        <View style={styles.container}>           
+            <MapView style={styles.mapStyle} 
+              provider={PROVIDER_GOOGLE}
+              mapType="satellite"
+              annotations={locations}
+              showsUserLocation={true}
+              initialRegion={{ latitude: 61.202759, longitude: 24.626741, latitudeDelta: 0, longitudeDelta: 0.004 }}
+            >
+              {
+                locations.map(marker => (
+                  <Marker
+                    coordinate={{
+                      latitude: marker.coordinates.latitude,
+                      longitude: marker.coordinates.longitude,
+                    }}
+                    title = {marker.title}
+                    description = {marker.description}
+                    key = {marker.index}
+                  />
+                ))
+              }
+            </MapView>
+        </View>
+    </>
   );
 }
