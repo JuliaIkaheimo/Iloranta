@@ -4,16 +4,12 @@ export default StyleSheet.create({
     //Containers
     container: {
       height: '100%',
-      paddingTop: 10,
       alignItems: "center",
       backgroundColor: "white"
     },
     contactContainer: {
-        alignItems: "center"
-    },
-    iconContainer: {
-        flexDirection: "row",
-        alignItems: "center"
+        alignItems: "center",
+        height: "57%"
     },
 
     //Texts

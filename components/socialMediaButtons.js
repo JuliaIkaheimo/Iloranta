@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, TouchableHighlight, Image} from 'react-native';
-import styles from '../styles/contactScreenStyle';
+import styles from '../styles/componentsStyle';
 import * as Linking from 'expo-linking';
 
 export default function SocialMediaButtons(props) {

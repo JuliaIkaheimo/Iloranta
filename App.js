@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Image} from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -48,7 +47,6 @@ export default function App() {
 
         </Drawer.Navigator>
       </NavigationContainer>
-      <StatusBar style="auto" />
     </>
   );
 }

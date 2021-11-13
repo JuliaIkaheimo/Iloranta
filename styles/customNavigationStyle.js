@@ -4,16 +4,23 @@ export default StyleSheet.create({
     socialMediaContainer: {
         justifyContent: "flex-end",
         alignItems: "center",
-        marginTop: "102%"
+        height: "20%"
+    },
+    imageContainer: {
+        height: "30%",
+        alignItems: "center",
+        justifyContent: "center"
     },
     logoStyle: {
-        marginTop: "20%",
-        marginBottom: 35,
-        height: 100,
+        width: 200,
+        height: 200
     },
     textStyle: {
         fontWeight: "bold",
          fontSize: 15,
          color: "#2F2F2F"
+     },
+     drawerItemListStyle: {
+         height: "40%"
      }
   });
