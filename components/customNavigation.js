@@ -15,10 +15,7 @@ import {DrawerItemList} from '@react-navigation/drawer';
         <View style={styles.drawerItemListStyle}>
           <DrawerItemList {...props} />
         </View>
-        <View style={styles.socialMediaContainer}>
-          <Text style={styles.textStyle}>Seuraa meitä somessa:</Text>
-        </View>
-        <SocialMediaButtons height={30} width={30} margin={12} width2={40} height2={40}/>
+        <SocialMediaButtons height={30} width={30} margin={12} width2={40} height2={40} fontSize={16}/>
       </>
     );
   }

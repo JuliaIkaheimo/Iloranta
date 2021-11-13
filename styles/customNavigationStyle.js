@@ -21,6 +21,6 @@ export default StyleSheet.create({
          color: "#2F2F2F"
      },
      drawerItemListStyle: {
-         height: "40%"
+         height: "50%"
      }
   });

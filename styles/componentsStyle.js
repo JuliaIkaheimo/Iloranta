@@ -2,11 +2,15 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
     //For socialMediaButtons.js
+    container: {
+      alignItems: "center",
+      height: "20%",
+      alignItems: "center",
+      textAlign: "center"
+    },
     iconContainer: {
       flexDirection: "row",
-      alignItems: "center",
-      justifyContent:"center",
-      height: "10%"
+      alignItems: "center"
   },
 
     //For menuButton.js

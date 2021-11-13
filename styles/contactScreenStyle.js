@@ -9,7 +9,7 @@ export default StyleSheet.create({
     },
     contactContainer: {
         alignItems: "center",
-        height: "57%"
+        height: "50%"
     },
 
     //Texts
