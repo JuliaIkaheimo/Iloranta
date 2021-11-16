@@ -1,6 +1,6 @@
 import React from 'react';
-import {View, TouchableHighlight, Image} from 'react-native';
-import styles from '../styles/contactScreenStyle';
+import {View, TouchableHighlight, Image, Text} from 'react-native';
+import styles from '../styles/componentsStyle';
 import * as Linking from 'expo-linking';
 
 export default function SocialMediaButtons(props) {
@@ -21,19 +21,22 @@ export default function SocialMediaButtons(props) {
         }
     }
     return(
-        <View style={styles.iconContainer}>
-            <TouchableHighlight underlayColor="white" onPress={() => {openSocialMediaSite("facebook")}}>
-                <Image style={{width: props.width, height: props.height, margin: props.margin}} resizeMode="contain" source={require('../assets/facebook.png')}/>
-            </TouchableHighlight>
-            <TouchableHighlight underlayColor="white" onPress={() => {openSocialMediaSite("instagram")}}>
-                <Image style={{width: props.width, height: props.height, margin: props.margin}} resizeMode="contain" source={require('../assets/instagram.png')}/>
-            </TouchableHighlight>
-            <TouchableHighlight underlayColor="white" onPress={() => {openSocialMediaSite("youtube")}}>
-                <Image style={{width: props.width2, height: props.height2, margin: props.margin}} resizeMode="contain" source={require('../assets/youtube.png')}/>
-            </TouchableHighlight>
-            <TouchableHighlight underlayColor="white" onPress={() => {openSocialMediaSite("tripadvisor")}}>
-                <Image style={{width: props.width2, height: props.height2, margin: props.margin}} resizeMode="contain" source={require('../assets/tripadvisor.png')}/>
-            </TouchableHighlight>
+        <View style={styles.container}>
+            <Text style={{marginTop: 35, color: "#2F2F2F", fontSize: props.fontSize, fontWeight: "bold"}}>Seuraa meitä somessa:</Text>
+            <View style={styles.iconContainer}>
+                <TouchableHighlight underlayColor="white" onPress={() => {openSocialMediaSite("facebook")}}>
+                    <Image style={{width: props.width, height: props.height, margin: props.margin}} resizeMode="contain" source={require('../assets/facebook.png')}/>
+                </TouchableHighlight>
+                <TouchableHighlight underlayColor="white" onPress={() => {openSocialMediaSite("instagram")}}>
+                    <Image style={{width: props.width, height: props.height, margin: props.margin}} resizeMode="contain" source={require('../assets/instagram.png')}/>
+                </TouchableHighlight>
+                <TouchableHighlight underlayColor="white" onPress={() => {openSocialMediaSite("youtube")}}>
+                    <Image style={{width: props.width2, height: props.height2, margin: props.margin}} resizeMode="contain" source={require('../assets/youtube.png')}/>
+                </TouchableHighlight>
+                <TouchableHighlight underlayColor="white" onPress={() => {openSocialMediaSite("tripadvisor")}}>
+                    <Image style={{width: props.width2, height: props.height2, margin: props.margin}} resizeMode="contain" source={require('../assets/tripadvisor.png')}/>
+                </TouchableHighlight>
+            </View>
         </View>
     );
 }
