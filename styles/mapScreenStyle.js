@@ -9,10 +9,8 @@ export default StyleSheet.create({
         width: '100%',
         height: '100%'
     },
-    markerStyle: {
-      borderRadius: 5,
-      height: 50,
-      width: 50,
-    },
+    titleText: {
+      fontSize: 18,
+    }
 
  });

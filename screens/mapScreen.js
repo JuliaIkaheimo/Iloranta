@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import {Alert, View} from 'react-native';
+import {Alert, View, Text} from 'react-native';
 
 import MenuButton from '../components/menuButton';
-import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
+import MapView, {PROVIDER_GOOGLE, Marker, Callout} from 'react-native-maps';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
 
@@ -51,7 +51,14 @@ const [mapType, setMapType]=useState('satellite');
                   title = {marker.title}
                   description = {marker.description}
                   key = {marker.title}
-                />
+                >
+                  <Callout style={{flex: 1, position: 'relative', padding: 5}}>
+                      <View>
+                        <Text style={styles.titleText}>{marker.title}</Text>
+                        <Text>{marker.description}</Text>
+                      </View>
+                  </Callout>
+                </Marker>
               ))
             }
           </MapView>
