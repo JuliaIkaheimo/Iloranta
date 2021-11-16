@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, TouchableHighlight, Image} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import styles from '../styles/componentsStyle';
 
 export default function MenuButton() {
      //For opening the menu
@@ -10,9 +11,9 @@ export default function MenuButton() {
          navigation.toggleDrawer();
      }
     return(
-        <View style={{paddingTop:50, paddingLeft: 30, paddingBottom: 20, backgroundColor: "white"}}>
+        <View style={styles.menuContainer}>
             <TouchableHighlight underlayColor="white" onPress={toggleMenu}>
-                <Image source={require('../assets/menuButton.png')} style={{ width: 35, height: 35 }} />
+                <Image source={require('../assets/menuButton.png')} style={styles.menuImage} />
             </TouchableHighlight>
         </View>
     );

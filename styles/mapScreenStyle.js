@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
     container: {
-      height: '87%',
+      height: '88%',
       justifyContent: "center"
     },
     mapStyle: {
