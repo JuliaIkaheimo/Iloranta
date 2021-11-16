@@ -17,5 +17,12 @@ export default StyleSheet.create({
         fontWeight: "bold",
         marginTop: 45,
         marginBottom: 25,
-    }
+    },
+    pickerText: {
+        color: "#2F2F2F"
+    },
+    //For the icon on top of the page
+    image:{
+        height: "18%"
+    },
   });
