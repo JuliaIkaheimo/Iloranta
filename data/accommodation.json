@@ -1,7 +1,7 @@
 [
     {
         "title": "Päärakennus",
-        "description": "Ilorannan sydän. Ruokasalit, keittiö, toimisto ja huoneet 1-4. Omenatarhasiipeen läpikulku.",
+        "parkingLot": "Voit jättää autosi Punaisen talon taakse tai kesällä Sylvia Reginan alapuolelle.",
         "coordinates": {
             "latitude": 61.20300,
             "longitude": 24.62669
@@ -9,7 +9,7 @@
     },
     {
         "title": "Omenatarha",
-        "description": "2011 valmistunut siipi päärakennuksen yhteydessä, jossa 10 x 2hh hotellitasoista huonetta.",
+        "parkingLot": "Voit jättää autosi riihen viereen.",
         "coordinates": {
             "latitude": 61.2026426,
             "longitude": 24.6256631
@@ -17,7 +17,7 @@
     },
     {
         "title": "Punainen talo",
-        "description": "Majoitushuoneet 5-16 löytyvät tästä talosta, kahdesta kerroksesta. Takapihalta löytyy kesäisin polkupyöriä ja talvisin potkureita ja pulkkia.",
+        "parkingLot": "Voit jättää autosi Punaisen talon taakse tai kesällä Sylvia Reginan alapuolelle.",
         "coordinates": {
             "latitude": 61.202519,
             "longitude": 24.626357
@@ -25,7 +25,7 @@
     },
     {
         "title": "Topin huone",
-        "description": "Päärakennuksen alapuolella sijaitsee lasten leikkipaikka. Monipuolinen alue kätkee sisäänsä mm. koripallokentän, liukukeinun, puumajan, hiekkalaatikon ja erilaisia keinuja.",
+        "parkingLot": "Voit jättää autosi Punaisen talon taakse tai kesällä Sylvia Reginan alapuolelle.",
         "coordinates": {
             "latitude": 61.202849,
             "longitude": 24.625564
@@ -33,21 +33,21 @@
     },
     {
         "title": "Iso aitta",
-        "description": "Pellon reunalla on kolme ihastuttavaa aittaa, joista yksi on ympärivuotiseen asumiseen soveltuva.",
+        "parkingLot": "Voit jättää autosi riihen viereen.",
         "coordinates": {
             "latitude": 61.203122,
             "longitude": 24.625374
         }
     },{
         "title": "Mökki",
-        "description": "Juhlatilaksi hyvin soveltuva idyllinen tila. Takaosassa kiipeilyseonä. Päädyssä asustaa kesäisin kanat.",
+        "parkingLot": "Voit ajaa autosi mökin pihaan.",
         "coordinates": {
             "latitude": 61.203311,
             "longitude": 24.625762
         } 
     }, {
         "title": "Takaluukku",
-        "description": "Juhlatilaksi hyvin soveltuva idyllinen tila. Takaosassa kiipeilyseonä. Päädyssä asustaa kesäisin kanat.",
+        "parkingLot": "Voit jättää autosi Punaisen talon taakse tai kesällä Sylvia Reginan alapuolelle.",
         "coordinates": {
             "latitude": 61.203311,
             "longitude": 24.625762
