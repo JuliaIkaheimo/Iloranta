@@ -44,7 +44,7 @@ export default function App() {
             drawerLabelStyle:{fontWeight: "bold", fontSize: 17},
             drawerIcon: () => (
             <Image style={{width:25, height:25}} source={require('./assets/star.png')}/>) }}>
-            {props => <ParkingScreen2 {...props} />}
+            {props => <ParkingScreen {...props} />}
           </Drawer.Screen>
 
           <Drawer.Screen name = "Yhteystiedot" options={{ 

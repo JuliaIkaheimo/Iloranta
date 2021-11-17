@@ -13,6 +13,8 @@ export default function ParkingScreen() {
     const [parking, setParking] = useState("Voit jättää autosi Punaisen talon taakse tai kesällä Sylvia Reginan alapuolelle.");
 
     useEffect(() => {
+       //Save the selected accommodation place to state and search the correct 
+       //parking lot from accommodation.json and set it to state also
        let findParkingLot = accommodation.find(place => place.title == selectedAccommodation);
        setParking(findParkingLot.parkingLot);
        console.log(parking);
@@ -23,7 +25,10 @@ export default function ParkingScreen() {
             <MenuButton />
             <View style={styles.container}>
                 <Image style={styles.image} resizeMode="contain" source={require('../assets/parking.png')}/>
-                <Text style={styles.h1}>Valitse majoituspaikkasi:</Text>
+                <View style={styles.textContainer}>
+                    <Text style={styles.h1}>Pysäköiminen Ilorannassa</Text>
+                    <Text style={styles.text}>Etsi valikosta majoituspaikkasi ja katso kartalta sopivin pysäköintipaikka.</Text>
+                </View>
                 <View style={styles.pickerContainer}>
                     <Picker style={styles.pickerText}
                         selectedValue={selectedAccommodation}
@@ -40,9 +45,11 @@ export default function ParkingScreen() {
                     </Picker>
                 </View>
                 <View style={styles.parkingLotContainer}>
-                    <Text style={styles.h2}>Sinulle sopiva parkkipaikka on:</Text>
-                    <Text style={styles.text}>{parking}</Text>
-                    <Image style={{width: "100%", height: "80%", marginTop: 20}} resizeMode="contain" source={require('../assets/paarakennus1.png')}/>
+                    <View style={styles.parkingLotContainerTexts}>
+                        <Text style={styles.h2}>Sinulle sopivin parkkipaikka on:</Text>
+                        <Text style={styles.text}>{parking}</Text>
+                    </View>
+                    <Image style={{width: "100%", height: "80%", marginTop: 10}} resizeMode="contain" source={require('../assets/paarakennus1.png')}/>
                 </View>
                 
                 

@@ -1,7 +1,7 @@
 [
     {
         "title": "Päärakennus",
-        "parkingLot": "Voit jättää autosi Punaisen talon taakse tai kesällä Sylvia Reginan alapuolelle.",
+        "parkingLot": "Punaisen talon takana tai kesällä Sylvia Reginan alapuolella.",
         "coordinates": {
             "latitude": 61.202519,
             "longitude": 24.626357
@@ -9,7 +9,7 @@
     },
     {
         "title": "Omenatarha",
-        "parkingLot": "Voit jättää autosi riihen viereen.",
+        "parkingLot": "Riihen vieressä.",
         "coordinates": {
             "latitude": 61.203146,
             "longitude": 24.625857
@@ -17,7 +17,7 @@
     },
     {
         "title": "Punainen talo",
-        "parkingLot": "Voit jättää autosi Punaisen talon taakse tai kesällä Sylvia Reginan alapuolelle.",
+        "parkingLot": "Punaisen talon takana tai kesällä Sylvia Reginan alapuolella.",
         "coordinates": {
             "latitude": 61.202519,
             "longitude": 24.626357
@@ -25,7 +25,7 @@
     },
     {
         "title": "Topin huone",
-        "parkingLot": "Voit jättää autosi Punaisen talon taakse tai kesällä Sylvia Reginan alapuolelle.",
+        "parkingLot": "Punaisen talon takana tai kesällä Sylvia Reginan alapuolella.",
         "coordinates": {
             "latitude": 61.202519,
             "longitude": 24.626357
@@ -33,21 +33,21 @@
     },
     {
         "title": "Iso aitta",
-        "parkingLot": "Voit jättää autosi riihen viereen.",
+        "parkingLot": "Riihen vieressä.",
         "coordinates": {
             "latitude": 61.203122,
             "longitude": 24.625374
         }
     },{
         "title": "Mökki",
-        "parkingLot": "Voit ajaa autosi mökin pihaan.",
+        "parkingLot": "Mökin pihassa.",
         "coordinates": {
             "latitude": 61.201360,
             "longitude": 24.627453
         } 
     }, {
         "title": "Takaluukku",
-        "parkingLot": "Voit jättää autosi Punaisen talon taakse tai kesällä Sylvia Reginan alapuolelle.",
+        "parkingLot": "Punaisen talon takana tai kesällä Sylvia Reginan alapuolella.",
         "coordinates": {
             "latitude": 61.202519,
             "longitude": 24.626357

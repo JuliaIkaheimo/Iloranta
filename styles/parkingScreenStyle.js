@@ -9,8 +9,11 @@ export default StyleSheet.create({
     },
     pickerContainer: {
         width: "70%",
+        height: "5%",
+        justifyContent:"center",
         borderColor: "#2F2F2F",
-        borderWidth: 1
+        borderWidth: 1,
+        marginTop: 20
     },
     parkingLotContainer: {
         width: "100%",
@@ -18,14 +21,19 @@ export default StyleSheet.create({
         padding: 20,
         alignItems: "center"
     },
-
+    textContainer: {
+        width: "80%"
+    },
+    parkingLotContainerTexts: {
+        height: "30%"
+    },
 
 
 //KARTTA
     mapStyle: {
         width: "100%",
-        height: "90%",
-        marginTop:10
+        height: "80%",
+        marginTop: 10
     },
 
 
@@ -36,11 +44,11 @@ export default StyleSheet.create({
         fontSize: 25,
         color: "#FCBC52",
         fontWeight: "bold",
-        marginTop: 45,
+        marginTop: 35,
         marginBottom: 25,
     },
     h2: {
-        fontSize: 20,
+        fontSize: 18,
         color: "#2F2F2F",
         fontWeight: "bold",
         textAlign: "center",
