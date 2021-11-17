@@ -3,16 +3,16 @@
         "title": "Päärakennus",
         "parkingLot": "Voit jättää autosi Punaisen talon taakse tai kesällä Sylvia Reginan alapuolelle.",
         "coordinates": {
-            "latitude": 61.20300,
-            "longitude": 24.62669
+            "latitude": 61.202519,
+            "longitude": 24.626357
         }
     },
     {
         "title": "Omenatarha",
         "parkingLot": "Voit jättää autosi riihen viereen.",
         "coordinates": {
-            "latitude": 61.2026426,
-            "longitude": 24.6256631
+            "latitude": 61.203146,
+            "longitude": 24.625857
         }
     },
     {
@@ -27,8 +27,8 @@
         "title": "Topin huone",
         "parkingLot": "Voit jättää autosi Punaisen talon taakse tai kesällä Sylvia Reginan alapuolelle.",
         "coordinates": {
-            "latitude": 61.202849,
-            "longitude": 24.625564
+            "latitude": 61.202519,
+            "longitude": 24.626357
         }
     },
     {
@@ -42,15 +42,15 @@
         "title": "Mökki",
         "parkingLot": "Voit ajaa autosi mökin pihaan.",
         "coordinates": {
-            "latitude": 61.203311,
-            "longitude": 24.625762
+            "latitude": 61.201360,
+            "longitude": 24.627453
         } 
     }, {
         "title": "Takaluukku",
         "parkingLot": "Voit jättää autosi Punaisen talon taakse tai kesällä Sylvia Reginan alapuolelle.",
         "coordinates": {
-            "latitude": 61.203311,
-            "longitude": 24.625762
+            "latitude": 61.202519,
+            "longitude": 24.626357
         } 
     }
 ]

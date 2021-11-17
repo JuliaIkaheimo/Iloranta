@@ -6,8 +6,8 @@ export default StyleSheet.create({
       justifyContent: "center"
     },
     mapStyle: {
-        width: '100%',
-        height: '100%'
+        width: '110%',
+        height: '110%'
     },
     titleText: {
       fontSize: 18,

@@ -8,14 +8,28 @@ export default StyleSheet.create({
       backgroundColor: "white"
     },
     pickerContainer: {
-        width: "70%"
+        width: "70%",
+        borderColor: "#2F2F2F",
+        borderWidth: 1
     },
     parkingLotContainer: {
-        backgroundColor:"lightblue",
         width: "100%",
+        height: "40%",
         padding: 20,
         alignItems: "center"
     },
+
+
+
+//KARTTA
+    mapStyle: {
+        width: "100%",
+        height: "90%",
+        marginTop:10
+    },
+
+
+
 
     //Texts
     h1: {
@@ -29,16 +43,17 @@ export default StyleSheet.create({
         fontSize: 20,
         color: "#2F2F2F",
         fontWeight: "bold",
-        textAlign: "center"
+        textAlign: "center",
+        marginBottom: "3%"
     },
     pickerText: {
-        color: "#2F2F2F"
+        color: "#2F2F2F",
     },
     text: {
-        fontSize: 16,
+        fontSize: 17,
         color: "#2F2F2F"
     },
-    
+
     //For the icon on top of the page
     image:{
         height: "18%"
