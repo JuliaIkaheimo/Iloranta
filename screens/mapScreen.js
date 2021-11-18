@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Alert, View, Text} from 'react-native';
 import { getDistance } from 'geolib';
 import MenuButton from '../components/menuButton';
@@ -10,25 +10,25 @@ import styles from '../styles/mapScreenStyle';
 import locations from '../data/locations';
 
 export default function MapScreen() {
+  const [status, setStatus] = useState();
+  const [distance, setDistance] = useState();
 
-const [distance, setDistance] = useState();
-  // const verifyPermissions= async ()=>{
-  //   const foreGround = await Location.requestForegroundPermissionsAsync();
-  //   const backGround = await Location.requestBackgroundPermissionsAsync();
-  //   if (foreGround.status!=='granted' && backGround.status!=='granted'){
-  //       Alert.alert('No permissions to use location', 
-  //           'You need to grant LOCATION permissions to use this app',
-  //           [{text:'Ok'}]
-  //       );
-  //       return false;
-  //   }
-  //   else{
-  //       return true;
-  //   }
-  // }
+  useEffect(() => {
+    //Ask user's permission for locationing
+    (async () => {
+      let { status } = await  Location.requestForegroundPermissionsAsync();
+     if (status !== 'granted') {
+        setStatus('Permission to access location was denied');
+        return;
+     } else {
+       console.log('Access granted!!')
+       setStatus(status)
+     }
+    
+    })();
+  }, []);
 
-  // //Ask the permission to locate user's location
-  // verifyPermissions();
+  
 
   return (
     <>
