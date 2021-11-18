@@ -11,9 +11,6 @@ import locations from '../data/locations';
 
 export default function MapScreen() {
 
-//none,standard, satellite,hybrid,terrain (Android only),mutedStandard (iOS 11.0+ only)
-const [mapType, setMapType]=useState('satellite');
-  
   const verifyPermissions= async ()=>{
     // const result=await Permissions.askAsync(Permissions.LOCATION);
     const foreGround = await Location.requestForegroundPermissionsAsync();
@@ -29,6 +26,11 @@ const [mapType, setMapType]=useState('satellite');
         return true;
     }
   }
+
+  console.log(getDistance(
+    { latitude: 20.0504188, longitude: 64.4139099 },
+    { latitude: 51.528308, longitude: -0.3817765 }
+  ));
 
   return (
     <>
