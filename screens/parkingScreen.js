@@ -4,20 +4,23 @@ import {Picker} from '@react-native-picker/picker';
 import styles from '../styles/parkingScreenStyle';
 import MenuButton from '../components/menuButton';
 
+import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
+
 //Information about the different accommodation places
 import accommodation from '../data/accommodation.json';
 
 
-export default function ParkingScreen() {
+export default function ParkingScreen2() {
     const [selectedAccommodation, setSelectedAccommodation] = useState("Päärakennus");
     const [parking, setParking] = useState("Voit jättää autosi Punaisen talon taakse tai kesällä Sylvia Reginan alapuolelle.");
+    const [coordinates, setCoordinates] = useState({latitude: 61.20300, longitude: 24.62669});
+    console.log(coordinates);
 
     useEffect(() => {
-       //Save the selected accommodation place to state and search the correct 
-       //parking lot from accommodation.json and set it to state also
+        //Find the selected accommodation place from accommodation.json and set the right parking lot to states
        let findParkingLot = accommodation.find(place => place.title == selectedAccommodation);
        setParking(findParkingLot.parkingLot);
-       console.log(parking);
+       setCoordinates(findParkingLot.coordinates);
       },[selectedAccommodation]);
 
     return(
@@ -49,7 +52,19 @@ export default function ParkingScreen() {
                         <Text style={styles.h2}>Sinulle sopivin parkkipaikka on:</Text>
                         <Text style={styles.text}>{parking}</Text>
                     </View>
-                    <Image style={{width: "100%", height: "80%", marginTop: 10}} resizeMode="contain" source={require('../assets/paarakennus1.png')}/>
+                    <MapView style={styles.mapStyle} 
+                        provider={PROVIDER_GOOGLE}
+                        mapType="satellite"
+                        showsUserLocation={false}
+                        initialRegion={{ latitude: 61.202519, longitude: 24.626357, latitudeDelta: 0, longitudeDelta: 0.006 }}
+                    >
+                        <Marker
+                            coordinate={coordinates}
+                            title = {"Parkkipaikka"}
+                            description = {selectedAccommodation + " parkkipaikka"}
+                            key = {parking}
+                            ></Marker>
+                    </MapView>
                 </View>
                 
                 
