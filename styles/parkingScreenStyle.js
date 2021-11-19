@@ -17,7 +17,7 @@ export default StyleSheet.create({
     },
     parkingLotContainer: {
         width: "100%",
-        height: "40%",
+        height: "50%",
         padding: 20,
         alignItems: "center"
     },
@@ -25,19 +25,16 @@ export default StyleSheet.create({
         width: "80%"
     },
     parkingLotContainerTexts: {
-        height: "30%"
+        height: "25%",
+        justifyContent: "center"
     },
 
-
-//KARTTA
+    //Map
     mapStyle: {
         width: "100%",
-        height: "80%",
+        height: "100%",
         marginTop: 10
     },
-
-
-
 
     //Texts
     h1: {
