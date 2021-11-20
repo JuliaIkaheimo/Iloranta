@@ -13,7 +13,6 @@ export default function ParkingScreen2() {
     const [selectedAccommodation, setSelectedAccommodation] = useState("Päärakennus");
     const [parking, setParking] = useState("Voit jättää autosi Punaisen talon taakse tai kesällä Sylvia Reginan alapuolelle.");
     const [coordinates, setCoordinates] = useState({latitude: 61.20300, longitude: 24.62669});
-    console.log(coordinates);
 
 
     const mapRef = useRef();
@@ -22,10 +21,13 @@ export default function ParkingScreen2() {
     accommodation.map(item => 
         list.push(item.coordinates)
     );
+    console.log("LISTA")
+    console.log(list);
 
     useEffect(() => {
         //Find the selected accommodation place from accommodation.json and set the right parking lot to states
        let findParkingLot = accommodation.find(place => place.title == selectedAccommodation);
+       console.log(findParkingLot);
        setParking(findParkingLot.parkingLot);
        setCoordinates(findParkingLot.coordinates);
 
@@ -67,21 +69,17 @@ export default function ParkingScreen2() {
                         <Text style={styles.text}>{parking}</Text>
                     </View>
                     <MapView style={styles.mapStyle}
-                        ref={mapRef} 
                         provider={PROVIDER_GOOGLE}
                         mapType="satellite"
                         showsUserLocation={false}
                         initialRegion={{ latitude: 61.202312, longitude: 24.626336, latitudeDelta: 0, longitudeDelta: 0.005 }}>
-                        <Marker coordinate={coordinates} title = {"Parkkipaikka"} description = {selectedAccommodation + " parkkipaikka"}>
+                        <Marker coordinate={coordinates} title = {"Parkkipaikka"} identifier = {"momoi"} description = {selectedAccommodation + " parkkipaikka"}>
                             <Image  source={require('../assets/parkingSign.png')}
                             style={{width: 30, height: 30}}
                             resizeMode="contain"/>
                         </Marker>
                     </MapView>
                 </View>
-                
-                
-
             </View>
         </>
     );
