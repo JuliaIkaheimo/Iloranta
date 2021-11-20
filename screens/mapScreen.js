@@ -10,7 +10,6 @@ import locations from '../data/locations';
 
 export default function MapScreen() {
   const [status, setStatus] = useState();
-  const [distance, setDistance] = useState(0);
   const [userLocation, setUserLocation] = useState({latitude: 61.202785, longitude: 24.626975});
 
   useEffect(() => {
@@ -23,11 +22,10 @@ export default function MapScreen() {
        console.log('Access granted!!')
        setStatus(status)
 
-      //Get the current location
+      //Get the current location and set it to state
       let location = await Location.getCurrentPositionAsync({});
       setUserLocation({latitude:location.coords.latitude, longitude:location.coords.longitude});
-      console.log("sijainti: LAT "+location.coords.latitude+" LON "+location.coords.longitude)
-      console.log(userLocation.latitude);
+      console.log("sijainti: LAT "+location.coords.latitude+" LON "+location.coords.longitude);
      }
     })();
   },[]);
@@ -54,15 +52,14 @@ export default function MapScreen() {
                   title = {marker.title}
                   description = {marker.description}
                   key = {marker.title}
-                  /*Calculate the distance between the user's location and the clicked marker*/
-                  onPress={() => setDistance(getDistance({latitude: marker.coordinates.latitude,
-                    longitude: marker.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude}))}
                 >
                   <Callout style={{flex: 1, position: 'relative', padding: 5}}>
                       <View>
                         <Text style={styles.titleText}>{marker.title}</Text>
                         <Text>{marker.description}</Text>
-                        <Text style={styles.distance}>Etäisyys: {distance} m</Text>
+                        {/* Calculate the distance between the user's location and the clicked marker */}
+                        <Text style={styles.distance}>Etäisyys: {getDistance({latitude: marker.coordinates.latitude,
+                    longitude: marker.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m</Text>
                       </View>
                   </Callout>
                 </Marker>
