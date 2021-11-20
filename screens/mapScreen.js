@@ -30,7 +30,6 @@ export default function MapScreen() {
     })();
   },[]);
 
-
   return (
     <>
     <MenuButton />
@@ -65,7 +64,6 @@ export default function MapScreen() {
                 </Marker>
               ))
             }
-            
           </MapView>
       </View>
     </>
