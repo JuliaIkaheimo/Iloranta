@@ -69,11 +69,12 @@ export default function ParkingScreen2() {
                         <Text style={styles.text}>{parking}</Text>
                     </View>
                     <MapView style={styles.mapStyle}
+                        ref={mapRef} 
                         provider={PROVIDER_GOOGLE}
                         mapType="satellite"
                         showsUserLocation={false}
                         initialRegion={{ latitude: 61.202312, longitude: 24.626336, latitudeDelta: 0, longitudeDelta: 0.005 }}>
-                        <Marker coordinate={coordinates} title = {"Parkkipaikka"} identifier = {"momoi"} description = {selectedAccommodation + " parkkipaikka"}>
+                        <Marker coordinate={coordinates} title = {"Parkkipaikka"} description = {selectedAccommodation + " parkkipaikka"}>
                             <Image  source={require('../assets/parkingSign.png')}
                             style={{width: 30, height: 30}}
                             resizeMode="contain"/>
