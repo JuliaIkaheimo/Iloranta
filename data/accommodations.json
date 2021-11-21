@@ -1,0 +1,71 @@
+[
+    {
+        "index": 4,
+        "title": "Punainen talo",
+        "description": "Majoitushuoneet 5-16 löytyvät tästä talosta, kahdesta kerroksesta. Takapihalta löytyy kesäisin polkupyöriä ja talvisin potkureita ja pulkkia.",
+        "coordinates": {
+            "latitude": 61.202519,
+            "longitude": 24.626357
+        }
+    },
+    {
+        "index": 12,
+        "title": "Sinikello M1",
+        "description": "Vuonna 2019 remontoitu mökki kuudelle henkilölle. Mökissä on vakiovarusteena TV, mikroaaltouuni, vedenkeitin, kahvinkeitin ja jääkaappi.",
+        "image": "require('../assets/Sinikello.jpg')",
+        "coordinates": {
+            "latitude": 61.201844,
+            "longitude": 24.627190
+        }
+    },
+    {
+        "index": 13,
+        "title": "Viherpeippo M2",
+        "description": "Kodikas mökki kuudelle henkilölle. Mökissä on vakiovarusteena TV, mikroaaltouuni, vedenkeitin, kahvinkeitin ja jääkaappi.",
+        "image": "require('../assets/Viherpeippo.jpg')",
+        "coordinates": {
+            "latitude": 61.201644,
+            "longitude": 24.627303
+        }
+    },
+    {
+        "index": 14,
+        "title": "Punahilkka M3",
+        "description": "Kodikas mökki metsän siimeksessä. Mökissä on kaksi wc/suihkuyhdistelmää ja kaksi uloskäyntiä. Mökissä on vakiovarusteena TV, mikroaaltouuni, vedenkeitin, kahvinkeitin ja jääkaappi.",
+        "coordinates": {
+            "latitude": 61.201350,
+            "longitude": 24.627496
+        }
+    },
+    {
+        "index": 15,
+        "title": "Lehmus M4",
+        "description": "Höylähirsimökki, jossa yksi tilava huone sekä alkovi, jossa on kaksi kiinteää kerrossänkyä. Mökissä on vakiovarusteena TV, mikroaaltouuni, vedenkeitin, kahvinkeitin ja jääkaappi. WC/suihkutila uusittu 201.",
+        "image": "require('../assets/Lehmus.jpg')",
+        "coordinates":{
+            "latitude": 61.201300,
+            "longitude": 24.627118
+        }
+    },
+    {
+        "index": 16,
+        "title": "Pähkinä M5",
+        "description": "Höylähirsimökki, jossa yksi tilava huone sekä alkovi, jossa on kaksi kiinteää kerrossänkyä. Mökissä on vakiovarusteena TV, mikroaaltouuni, vedenkeitin, kahvinkeitin ja jääkaappi. WC/suihkutila uusittu 2018.",
+        "image": "require('../assets/Pahkina.jpg')",
+        "coordinates": {
+            "latitude": 61.201170,
+            "longitude": 24.627126
+        }
+    },
+    
+    {
+        "index": 18,
+        "title": "Aitat",
+        "description": "Pellon reunalla on kolme ihastuttavaa aittaa, joista yksi on ympärivuotiseen asumiseen soveltuva.",
+        "image": "require('../assets/Aitat.jpg')",
+        "coordinates": {
+            "latitude": 61.203122,
+            "longitude": 24.625374
+        }
+    }
+]
