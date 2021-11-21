@@ -58,6 +58,7 @@ export default function App() {
 
         </Drawer.Navigator>
       </NavigationContainer>
+      <StatusBar translucent={false} backgroundColor={"white"}/>
     </>
   );
 }
