@@ -26,19 +26,17 @@ export default function ParkingScreen2() {
 
     useEffect(() => {
         //Find the selected accommodation place from accommodation.json and set the right parking lot to states
-       let findParkingLot = accommodation.find(place => place.title == selectedAccommodation);
-       console.log(findParkingLot);
-       setParking(findParkingLot.parkingLot);
-       setCoordinates(findParkingLot.coordinates);
-
+        let findParkingLot = accommodation.find(place => place.title == selectedAccommodation);
+        console.log(findParkingLot);
+        setCoordinates(findParkingLot.coordinates);
+        setParking(findParkingLot.parkingLot);
           
-       if (mapRef.current) {
-        // list of _id's must same that has been provided to the identifier props of the Marker
-        mapRef.current.fitToSuppliedMarkers(list.map(({ coordinates }) => coordinates));
-      }
+    //    if (mapRef.current) {
+    //     // list of _id's must same that has been provided to the identifier props of the Marker
+    //     mapRef.current.fitToSuppliedMarkers(list.map(({ coordinates }) => coordinates));
+    //   }
        
       },[selectedAccommodation]);
-
 
     return(
         <>
