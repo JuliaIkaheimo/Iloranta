@@ -25,6 +25,7 @@ export default function MainScreen() {
             <Image style={styles.languageImage} source={require('../assets/uk.png')}/>
             <Image style={styles.languageImage} source={require('../assets/de.png')}/>
             </View>
+            
         </View>
         </>
     );

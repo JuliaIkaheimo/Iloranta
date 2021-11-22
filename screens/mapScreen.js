@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import {Alert, View, Text, Image} from 'react-native';
-
+import React, {useState, useEffect} from 'react';
+import { getDistance } from 'geolib';
+import {View, Text} from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 
 import MenuButton from '../components/menuButton';
 import MapView, {PROVIDER_GOOGLE, Marker, Callout} from 'react-native-maps';
 import * as Location from 'expo-location';
-import * as Permissions from 'expo-permissions';
 
 import styles from '../styles/mapScreenStyle';
 
@@ -17,26 +16,32 @@ import nature from '../data/nature';
 import parking from '../data/parking';
 
 export default function MapScreen() {
+  //For setting the status of locationing
+  const [status, setStatus] = useState();
 
-//none,standard, satellite,hybrid,terrain (Android only),mutedStandard (iOS 11.0+ only)
-const [mapType, setMapType]=useState('satellite');
-const [currentCategory, setCurrentCategory] = useState('All');
-  
-  const verifyPermissions= async ()=>{
-    // const result=await Permissions.askAsync(Permissions.LOCATION);
-    const foreGround = await Location.requestForegroundPermissionsAsync();
-    const backGround = await Location.requestBackgroundPermissionsAsync();
-    if (foreGround.status!=='granted' && backGround.status!=='granted'){
-        Alert.alert('No permissions to use location', 
-            'You need to grant LOCATION permissions to use this app',
-            [{text:'Ok'}]
-        );
-        return false;
-    }
-    else{
-        return true;
-    }
-  }
+  //For saving the current user location
+  const [userLocation, setUserLocation] = useState({latitude: 61.202785, longitude: 24.626975});
+
+  //For categorizing the different kind of locations
+  const [currentCategory, setCurrentCategory] = useState('All');
+
+  useEffect(() => {
+    //Ask user's permission for locationing
+    (async () => {
+      let { status } = await  Location.requestForegroundPermissionsAsync();
+     if (status !== 'granted') {
+        setStatus('Permission to access location was denied');
+     } else {
+       console.log('Access granted!!')
+       setStatus(status)
+
+      //Get the current location and set it to state
+      let location = await Location.getCurrentPositionAsync({});
+      setUserLocation({latitude:location.coords.latitude, longitude:location.coords.longitude});
+      console.log("sijainti: LAT "+location.coords.latitude+" LON "+location.coords.longitude);
+     }
+    })();
+  },[]);
 
   const getMarkers = () => {
     switch (currentCategory) {
@@ -47,10 +52,6 @@ const [currentCategory, setCurrentCategory] = useState('All');
       case 'parking': return chosenParking;;
       default: return [...chosenActivities, ...chosenAccommodations, ...chosenNature, ...chosenBuildings, ...chosenParking];
     }
-  }
-
-  const onCategoryClick = category => {
-    setCurrentCategory(category);
   }
 
   const chosenActivities = activities.map((activities) => (
@@ -69,6 +70,9 @@ const [currentCategory, setCurrentCategory] = useState('All');
             {/*<Text><Image source={{uri: activities.image}} style={{width: 300, height: 200}} resizeMode="cover" /></Text>*/}
             <Text style={styles.titleText}>{activities.title}</Text>
             <Text>{activities.description}</Text>
+            <Text style={styles.distance}>
+              Etäisyys: {getDistance({latitude: activities.coordinates.latitude, longitude: activities.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
+            </Text>
           </View>
       </Callout>
     </Marker>
@@ -90,6 +94,9 @@ const [currentCategory, setCurrentCategory] = useState('All');
             {/*<Text><Image source={{uri: accommodations.image}} style={{width: 300, height: 200}} resizeMode="cover" /></Text>*/}
             <Text style={styles.titleText}>{accommodations.title}</Text>
             <Text>{accommodations.description}</Text>
+            <Text style={styles.distance}>
+              Etäisyys: {getDistance({latitude: accommodations.coordinates.latitude, longitude: accommodations.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
+            </Text>
           </View>
       </Callout>
     </Marker>
@@ -111,6 +118,9 @@ const [currentCategory, setCurrentCategory] = useState('All');
             {/*<Text><Image source={{uri: nature.image}} style={{width: 300, height: 200}} resizeMode="cover" /></Text>*/}
             <Text style={styles.titleText}>{nature.title}</Text>
             <Text>{nature.description}</Text>
+            <Text style={styles.distance}>
+              Etäisyys: {getDistance({latitude: nature.coordinates.latitude, longitude: nature.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
+            </Text>
           </View>
       </Callout>
     </Marker>
@@ -132,6 +142,9 @@ const [currentCategory, setCurrentCategory] = useState('All');
             {/*<Text><Image source={{uri: buildings.image}} style={{width: 300, height: 200}} resizeMode="cover" /></Text>*/}
             <Text style={styles.titleText}>{buildings.title}</Text>
             <Text>{buildings.description}</Text>
+            <Text style={styles.distance}>
+              Etäisyys: {getDistance({latitude: buildings.coordinates.latitude, longitude: buildings.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
+            </Text>
           </View>
       </Callout>
     </Marker>
@@ -153,6 +166,9 @@ const [currentCategory, setCurrentCategory] = useState('All');
             {/*<Text><Image source={{uri: parking.image}} style={{width: 300, height: 200}} resizeMode="cover" /></Text>*/}
             <Text style={styles.titleText}>{parking.title}</Text>
             <Text>{parking.description}</Text>
+            <Text style={styles.distance}>
+              Etäisyys: {getDistance({latitude: parking.coordinates.latitude, longitude: parking.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
+            </Text>
           </View>
       </Callout>
     </Marker>
