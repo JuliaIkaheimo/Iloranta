@@ -1,0 +1,56 @@
+[
+    {
+        "title": "Päärakennus",
+        "parkingLot": "Punaisen talon takana tai kesällä Sylvia Reginan alapuolella.",
+        "coordinates": {
+            "latitude": 61.202519,
+            "longitude": 24.626357
+        }
+    },
+    {
+        "title": "Omenatarha",
+        "parkingLot": "Riihen vieressä.",
+        "coordinates": {
+            "latitude": 61.203146,
+            "longitude": 24.625857
+        }
+    },
+    {
+        "title": "Punainen talo",
+        "parkingLot": "Punaisen talon takana tai kesällä Sylvia Reginan alapuolella.",
+        "coordinates": {
+            "latitude": 61.202519,
+            "longitude": 24.626357
+        }
+    },
+    {
+        "title": "Topin huone",
+        "parkingLot": "Punaisen talon takana tai kesällä Sylvia Reginan alapuolella.",
+        "coordinates": {
+            "latitude": 61.202519,
+            "longitude": 24.626357
+        }
+    },
+    {
+        "title": "Iso aitta",
+        "parkingLot": "Riihen vieressä.",
+        "coordinates": {
+            "latitude": 61.203122,
+            "longitude": 24.625374
+        }
+    },{
+        "title": "Mökki",
+        "parkingLot": "Mökin pihassa.",
+        "coordinates": {
+            "latitude": 61.201360,
+            "longitude": 24.627453
+        } 
+    }, {
+        "title": "Takaluukku",
+        "parkingLot": "Punaisen talon takana tai kesällä Sylvia Reginan alapuolella.",
+        "coordinates": {
+            "latitude": 61.202519,
+            "longitude": 24.626357
+        } 
+    }
+]

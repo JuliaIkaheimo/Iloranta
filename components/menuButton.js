@@ -7,6 +7,7 @@ export default function MenuButton() {
      //For opening the menu
      const navigation = useNavigation();
 
+     //Open the menu on button click
      function toggleMenu() {
          navigation.toggleDrawer();
      }
