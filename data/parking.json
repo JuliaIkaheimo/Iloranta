@@ -1,0 +1,11 @@
+[
+    {
+        "index": 8,
+        "title": "Parkkipaikat",
+        "description": "Parkkipaikkoja on kolme. Punaisen talon sivustalla, lasten leikkipaikan alapuolella ja kolmas, jossa myös sähköpistokkeet, riihen vieressä. Mökeille ajo ja parkkeeraaminen sallittu.",
+        "coordinates": {
+            "latitude": 61.203588,
+            "longitude": 24.625775
+        }
+    }
+]

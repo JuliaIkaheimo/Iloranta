@@ -1,0 +1,30 @@
+[
+    {
+        "index": 6,
+        "title": "Sylvia Regina",
+        "description": "Päärakennuksen alapuolella sijaitsee lasten leikkipaikka. Monipuolinen alue kätkee sisäänsä mm. koripallokentän, liukukeinun, puumajan, hiekkalaatikon ja erilaisia keinuja.",
+        "coordinates": {
+            "latitude": 61.202849,
+            "longitude": 24.625564
+        }
+    },
+    {
+        "index": 11,
+        "title": "Ranta-alue",
+        "description": "Rantasaunat, savusauna, rantalentopallokenttä, lautta, SUP-laudat, veneet.",
+        "image": "require('../assets/Ranta-alue.jpg')",
+        "coordinates": {
+            "latitude": 61.200196,
+            "longitude": 24.622047
+        }
+    },
+    {
+        "index": 17,
+        "title": "Ulkoaktiviteettialue",
+        "description": "Tenniskentät toimii myös salibandykenttinä, trampoliinit, boccaradat ja iso nurmialue vaikka ulkoilmajoogaan tai jalkapalloon.",
+        "coordinates": {
+            "latitude": 61.201859,
+            "longitude": 24.626641
+        }
+    }
+]
