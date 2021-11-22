@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { getDistance } from 'geolib';
-import {Alert, View, Text, Image} from 'react-native';
+import {View, Text} from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 
 import MenuButton from '../components/menuButton';
@@ -16,8 +16,14 @@ import nature from '../data/nature';
 import parking from '../data/parking';
 
 export default function MapScreen() {
+  //For setting the status of locationing
   const [status, setStatus] = useState();
+
+  //For saving the current user location
   const [userLocation, setUserLocation] = useState({latitude: 61.202785, longitude: 24.626975});
+
+  //For categorizing the different kind of locations
+  const [currentCategory, setCurrentCategory] = useState('All');
 
   useEffect(() => {
     //Ask user's permission for locationing
@@ -48,10 +54,6 @@ export default function MapScreen() {
     }
   }
 
-  const onCategoryClick = category => {
-    setCurrentCategory(category);
-  }
-
   const chosenActivities = activities.map((activities) => (
     <Marker
       pinColor="#2978b5"
@@ -68,6 +70,9 @@ export default function MapScreen() {
             {/*<Text><Image source={{uri: activities.image}} style={{width: 300, height: 200}} resizeMode="cover" /></Text>*/}
             <Text style={styles.titleText}>{activities.title}</Text>
             <Text>{activities.description}</Text>
+            <Text style={styles.distance}>
+              Etäisyys: {getDistance({latitude: activities.coordinates.latitude, longitude: activities.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
+            </Text>
           </View>
       </Callout>
     </Marker>
@@ -89,6 +94,9 @@ export default function MapScreen() {
             {/*<Text><Image source={{uri: accommodations.image}} style={{width: 300, height: 200}} resizeMode="cover" /></Text>*/}
             <Text style={styles.titleText}>{accommodations.title}</Text>
             <Text>{accommodations.description}</Text>
+            <Text style={styles.distance}>
+              Etäisyys: {getDistance({latitude: accommodations.coordinates.latitude, longitude: accommodations.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
+            </Text>
           </View>
       </Callout>
     </Marker>
@@ -110,6 +118,9 @@ export default function MapScreen() {
             {/*<Text><Image source={{uri: nature.image}} style={{width: 300, height: 200}} resizeMode="cover" /></Text>*/}
             <Text style={styles.titleText}>{nature.title}</Text>
             <Text>{nature.description}</Text>
+            <Text style={styles.distance}>
+              Etäisyys: {getDistance({latitude: nature.coordinates.latitude, longitude: nature.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
+            </Text>
           </View>
       </Callout>
     </Marker>
@@ -131,6 +142,9 @@ export default function MapScreen() {
             {/*<Text><Image source={{uri: buildings.image}} style={{width: 300, height: 200}} resizeMode="cover" /></Text>*/}
             <Text style={styles.titleText}>{buildings.title}</Text>
             <Text>{buildings.description}</Text>
+            <Text style={styles.distance}>
+              Etäisyys: {getDistance({latitude: buildings.coordinates.latitude, longitude: buildings.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
+            </Text>
           </View>
       </Callout>
     </Marker>
@@ -152,6 +166,9 @@ export default function MapScreen() {
             {/*<Text><Image source={{uri: parking.image}} style={{width: 300, height: 200}} resizeMode="cover" /></Text>*/}
             <Text style={styles.titleText}>{parking.title}</Text>
             <Text>{parking.description}</Text>
+            <Text style={styles.distance}>
+              Etäisyys: {getDistance({latitude: parking.coordinates.latitude, longitude: parking.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
+            </Text>
           </View>
       </Callout>
     </Marker>

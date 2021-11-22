@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
     container: {
-      height: '100%',
+      height: '88%',
       alignItems: 'center',
       backgroundColor: "white"
     },
@@ -35,7 +35,7 @@ export default StyleSheet.create({
     },
     mapContainer: {
       width: "100%",
-      height: "82%",
+      height: "95%",
       alignItems: "center"
   },
  });
