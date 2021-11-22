@@ -1,0 +1,39 @@
+[
+    {
+        "index": 3,
+        "title": "Peltolenkki",
+        "description": "Kilometrin mittainen peltolenkki, jonka varrella on ulkokuntoilurasteja.",
+        "coordinates": {
+            "latitude": 61.201666,
+            "longitude": 24.626019
+        }
+    },
+    {
+        "index": 7,
+        "title": "Luontopolut",
+        "description": "Jääkausipolku 2,9km ja Voimametsäpolku 2km. Riippumattoalue ja metsälaavu löytyy myös reittien varrelta.",
+        "coordinates": {
+            "latitude": 61.203227,
+            "longitude": 24.626722
+        }
+    },
+    {
+        "index": 9,
+        "title": "Lintutorni",
+        "description": "Peltolenkin varrella kiva kohde käydä tähyilemässä Iso-Roineen aalloille.",
+        "coordinates": {
+            "latitude": 61.201508,
+            "longitude": 24.620006
+        }
+    },
+    {
+        "index": 10,
+        "title": "Rantamäki",
+        "description": "Kesäisin jääkauden aikaisessa saaressa on kotieläimiä. Alueella myös laavu, kammi ja viikinkilaiva vaikka ruokailuun.",
+        "image": "require('../assets/Rantamaki.jpg')",
+        "coordinates": {
+            "latitude": 61.201230,
+            "longitude": 24.623177
+        }
+    }
+]
