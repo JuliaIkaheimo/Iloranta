@@ -24,18 +24,19 @@ export default StyleSheet.create({
       padding: 5,
     },
     pickerContainer: {
-      width: "100%",
-      height: "5%",
+      width: "70%",
+      height: "8%",
       justifyContent:"center",
       borderColor: "#2F2F2F",
       borderWidth: 1,
+      margin: 5,
     },
     pickerText: {
       color: "#2F2F2F",
     },
     mapContainer: {
       width: "100%",
-      height: "95%",
+      height: "90%",
       alignItems: "center"
   },
  });
