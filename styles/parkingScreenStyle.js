@@ -22,7 +22,8 @@ export default StyleSheet.create({
     },
     textContainer: {
         width: "80%",
-        height: "16%"
+        height: "16%",
+        alignItems: "center"
     },
     parkingLotContainerTexts: {
         height: "20%",

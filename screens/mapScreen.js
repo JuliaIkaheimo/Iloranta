@@ -4,7 +4,7 @@ import {View, Text} from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 
 import MenuButton from '../components/menuButton';
-import MapView, {PROVIDER_GOOGLE, Marker, Callout} from 'react-native-maps';
+import MapView, {PROVIDER_GOOGLE, Marker, Callout, Polyline} from 'react-native-maps';
 import * as Location from 'expo-location';
 
 import styles from '../styles/mapScreenStyle';
@@ -195,7 +195,7 @@ export default function MapScreen() {
             showsUserLocation={true}
             initialRegion={{ latitude: 61.202759, longitude: 24.626741, latitudeDelta: 0, longitudeDelta: 0.004 }}
           >
-            {getMarkers()}
+           {getMarkers()}
           </MapView>
         </View>
       </View>

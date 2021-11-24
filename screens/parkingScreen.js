@@ -3,7 +3,7 @@ import {View, Text, Image} from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 import styles from '../styles/parkingScreenStyle';
 import MenuButton from '../components/menuButton';
-import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
+import MapView, {PROVIDER_GOOGLE, Marker, Polyline} from 'react-native-maps';
 
 //Information about the different accommodation places
 import accommodation from '../data/accommodation.json';
@@ -14,15 +14,31 @@ export default function ParkingScreen2() {
     const [parking, setParking] = useState("Voit jättää autosi Punaisen talon taakse tai kesällä Sylvia Reginan alapuolelle.");
     const [coordinates, setCoordinates] = useState({latitude: 61.20300, longitude: 24.62669});
 
+     //For the polyline in the map
+    const [polylineCoordinates, setPolylineCoordinates] = useState([
+        {
+        latitude: 61.202629,
+        longitude: 24.627148
+        },
+        {
+        latitude: 61.202716,
+        longitude: 24.627048,
+        },
+        {
+        latitude: 61.202679,
+        longitude: 24.626773,
+        },
+    ]);
 
-    const mapRef = useRef();
 
-    let list = [];
-    accommodation.map(item => 
-        list.push(item.coordinates)
-    );
-    console.log("LISTA")
-    console.log(list);
+    // const mapRef = useRef();
+
+    // let list = [];
+    // accommodation.map(item => 
+    //     list.push(item.coordinates)
+    // );
+    // console.log("LISTA")
+    // console.log(list);
 
     useEffect(() => {
         //Find the selected accommodation place from accommodation.json and set the right parking lot to states
@@ -43,7 +59,7 @@ export default function ParkingScreen2() {
             <MenuButton />
             <View style={styles.container}>
                 <View style={styles.textContainer}>
-                    <Text style={styles.h1}>Pysäköiminen Ilorannassa</Text>
+                    <Text style={styles.h1}>Saapuminen Ilorantaan</Text>
                     <Text style={styles.text}>Etsi valikosta majoituspaikkasi ja katso kartalta sopivin pysäköintipaikka.</Text>
                 </View>
                 <View style={styles.pickerContainer}>
@@ -54,6 +70,7 @@ export default function ParkingScreen2() {
                             setSelectedAccommodation(itemValue)
                         }>
                             { 
+                                //Map through all the accommodation places and show them in the picker
                                 accommodation.map(item => 
                                     <Picker.Item key={item.title} label={item.title} value={item.title} />
                                 )
@@ -67,7 +84,7 @@ export default function ParkingScreen2() {
                         <Text style={styles.text}>{parking}</Text>
                     </View>
                     <MapView style={styles.mapStyle}
-                        ref={mapRef} 
+                        // ref={mapRef} 
                         provider={PROVIDER_GOOGLE}
                         mapType="satellite"
                         showsUserLocation={false}
@@ -77,6 +94,14 @@ export default function ParkingScreen2() {
                             style={{width: 30, height: 30}}
                             resizeMode="contain"/>
                         </Marker>
+                        <Polyline
+                        coordinates={polylineCoordinates}
+                        strokeColor="#FCBC52" // fallback for when `strokeColors` is not supported by the map-provider
+                        strokeColors={['#FCBC52']}
+                        strokeWidth={7}
+                        lineDashPattern={[1]}
+                        
+                        />
                     </MapView>
                 </View>
             </View>
