@@ -23,7 +23,7 @@
         "index": 5,
         "title": "Navetta",
         "description": "Parvi, Lysti, Takaluukku, Topin huone, Kirjasto, hoitohuoneet ja talvisauna. Todellinen monitoimirakennus keskellä pihaa.",
-        "image": "require('../assets/Nevetta.jpg')",
+        "image": "require('../assets/Navetta.jpg')",
         "coordinates": {
             "latitude": 61.202389,
             "longitude": 24.627080

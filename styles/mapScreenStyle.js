@@ -10,21 +10,11 @@ export default StyleSheet.create({
         width: '100%',
         height: '100%'
     },
-    titleText: {
-      fontSize: 18,
-      color: "black"
-    },
     distance:{
       fontWeight:"bold",
       color: "black"
     },
-    calloutBubble: {
-      flex: 1,
-      position: 'relative',
-      padding: 5,
-      alignItems:"center"
-    },
-    calloutImage: {
+    image: {
       width: 110, 
       height: 90
     },

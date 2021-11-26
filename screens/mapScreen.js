@@ -27,11 +27,9 @@ export default function MapScreen() {
 
   //For the modal
   const [modalVisible, setModalVisible] = useState(false);
-
   const [modalTitle, setModalTitle] = useState();
   const [modalDescription, setmodalDescription] = useState();
-  const [modalImage, setModalImage] = useState();
-  const [modalCoordinates, setModalCoordinates] = useState({});
+  const [modalDistance, setModalDistance] = useState({});
 
   useEffect(() => {
     //Ask user's permission for locationing
@@ -52,6 +50,7 @@ export default function MapScreen() {
   },[]);
 
   const getMarkers = () => {
+    //Show the markers based on the selected category
     switch (currentCategory) {
       case 'activities': return chosenActivities;
       case 'accommodations': return chosenAccommodations;
@@ -69,20 +68,11 @@ export default function MapScreen() {
         latitude: activities.coordinates.latitude,
         longitude: activities.coordinates.longitude,
       }}
-      title = {activities.title}
-      description = {activities.description}
       key = {activities.index}
-      onPress={() => {setModalVisible(true), setModalTitle(activities.title), setmodalDescription(activities.description), setModalImage(activities.image), setModalCoordinates({latitude:activities.coordinates.latitude, longitude:activities.coordinates.longitude})}}
-    >
-      <Callout style={styles.calloutBubble}>
-              <Text style={styles.titleText}>{activities.title}</Text>
-              <Text style={{marginBottom: 5}}><Image style={styles.calloutImage} source={require('../assets/Ranta-alue.jpg')}/></Text>
-              <Text >{activities.description}</Text>
-              <Text style={styles.distance}>
-                Etäisyys: {getDistance({latitude: activities.coordinates.latitude, longitude: activities.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
-              </Text>
-      </Callout>
-    </Marker>
+      onPress={() => {setModalVisible(true), setModalTitle(activities.title), setmodalDescription(activities.description),
+        setModalDistance(getDistance({latitude: activities.coordinates.latitude, longitude: activities.coordinates.longitude},
+          {latitude: userLocation.latitude, longitude: userLocation.longitude}))}}
+    /> 
   ));
 
   const chosenAccommodations = accommodations.map((accommodations) => (
@@ -92,21 +82,11 @@ export default function MapScreen() {
         latitude: accommodations.coordinates.latitude,
         longitude: accommodations.coordinates.longitude,
       }}
-      title = {accommodations.title}
-      description = {accommodations.description}
       key = {accommodations.index}
-      onPress={() => {setModalVisible(true)}}
-      >
-      <Callout style={styles.calloutBubble}>
-          <View>
-            <Text style={styles.titleText}>{accommodations.title}</Text>
-            <Text>{accommodations.description}</Text>
-            <Text style={styles.distance}>
-              Etäisyys: {getDistance({latitude: accommodations.coordinates.latitude, longitude: accommodations.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
-            </Text>
-          </View>
-      </Callout>
-    </Marker>
+      onPress={() => {setModalVisible(true), setModalTitle(accommodations.title), setmodalDescription(accommodations.description),
+        setModalDistance(getDistance({latitude: accommodations.coordinates.latitude, longitude: accommodations.coordinates.longitude},
+          {latitude: userLocation.latitude, longitude: userLocation.longitude}))}}
+      />
   ));
 
   const chosenNature = nature.map((nature) => (
@@ -116,21 +96,11 @@ export default function MapScreen() {
         latitude: nature.coordinates.latitude,
         longitude: nature.coordinates.longitude,
       }}
-      title = {nature.title}
-      description = {nature.description}
       key = {nature.index}
-      onPress={() => setModalVisible(true)}
-      >
-      <Callout style={styles.calloutBubble}>
-          <View>
-            <Text style={styles.titleText}>{nature.title}</Text>
-            <Text>{nature.description}</Text>
-            <Text style={styles.distance}>
-              Etäisyys: {getDistance({latitude: nature.coordinates.latitude, longitude: nature.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
-            </Text>
-          </View>
-      </Callout>
-    </Marker>
+      onPress={() => {setModalVisible(true), setModalTitle(nature.title), setmodalDescription(nature.description),
+        setModalDistance(getDistance({latitude: nature.coordinates.latitude, longitude: nature.coordinates.longitude},
+          {latitude: userLocation.latitude, longitude: userLocation.longitude}))}}
+      />
   ));
 
   const chosenBuildings = buildings.map((buildings) => (
@@ -140,21 +110,11 @@ export default function MapScreen() {
         latitude: buildings.coordinates.latitude,
         longitude: buildings.coordinates.longitude,
       }}
-      title = {buildings.title}
-      description = {buildings.description}
       key = {buildings.index}
-      onPress={() => setModalVisible(true)}
-      >
-      <Callout style={styles.calloutBubble}>
-          <View>
-            <Text style={styles.titleText}>{buildings.title}</Text>
-            <Text>{buildings.description}</Text>
-            <Text style={styles.distance}>
-              Etäisyys: {getDistance({latitude: buildings.coordinates.latitude, longitude: buildings.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
-            </Text>
-          </View>
-      </Callout>
-    </Marker>
+      onPress={() => {setModalVisible(true), setModalTitle(buildings.title), setmodalDescription(buildings.description),
+        setModalDistance(getDistance({latitude: buildings.coordinates.latitude, longitude: buildings.coordinates.longitude},
+          {latitude: userLocation.latitude, longitude: userLocation.longitude}))}}
+      />
   ));
 
   const chosenParking = parking.map((parking) => (
@@ -167,18 +127,10 @@ export default function MapScreen() {
       title = {parking.title}
       description = {parking.description}
       key = {parking.index}
-      onPress={() => setModalVisible(true)}
-      >
-      <Callout style={styles.calloutBubble}>
-          <View>
-            <Text style={styles.titleText}>{parking.title}</Text>
-            <Text>{parking.description}</Text>
-            <Text style={styles.distance}>
-              Etäisyys: {getDistance({latitude: parking.coordinates.latitude, longitude: parking.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
-            </Text>
-          </View>
-      </Callout>
-    </Marker>
+      onPress={() => {setModalVisible(true), setModalTitle(parking.title), setmodalDescription(parking.description),
+        setModalDistance(getDistance({latitude: parking.coordinates.latitude, longitude: parking.coordinates.longitude},
+          {latitude: userLocation.latitude, longitude: userLocation.longitude}))}}
+      />
   ));
 
   return (
@@ -194,12 +146,6 @@ export default function MapScreen() {
             <Picker.Item key="paarakennukset" label="Päärakennukset" value="buildings" />
             <Picker.Item key="parkkipaikat" label="Parkkipaikat" value="parking" />
           </Picker>
-          <Pressable
-        style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
-      >
-        <Text style={styles.textStyle}>Show Modal</Text>
-      </Pressable>
         </View>
         <View style={styles.mapContainer}>
 
@@ -209,17 +155,23 @@ export default function MapScreen() {
         transparent={true}
         visible={modalVisible}
         onRequestClose={() => {
-          Alert.alert("Modal has been closed.");
           setModalVisible(!modalVisible);
         }}
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Image style={{width: 20, height: 20}} source={{modalImage}}/>
+
+            { modalTitle=="Sylvia Regina"?
+            <Image style={styles.image} resizeMode="cover" source={require('../assets/Ranta-alue.jpg')}/>
+              :
+              <Image style={styles.image} resizeMode="cover" source={require('../assets/Navetta.jpg')}/>
+            }
+            
+
             <Text style={styles.modalText}>{modalTitle}</Text>
             <Text style={styles.modalText}>{modalDescription}</Text>
             <Text style={styles.distance}>
-              Etäisyys: {getDistance({latitude:modalCoordinates.latitude, longitude:modalCoordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
+              Etäisyys: {modalDistance} m
             </Text>
             <Pressable
               style={[styles.button, styles.buttonClose]}
