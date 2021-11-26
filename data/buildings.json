@@ -5,8 +5,8 @@
         "description": "Ilorannan sydän. Ruokasalit, keittiö, toimisto ja huoneet 1-4. Omenatarhasiipeen läpikulku.",
         "image": "require('../assets/Paarakennus.jpg')",
         "coordinates": {
-            "latitude": 61.20300,
-            "longitude": 24.62669
+            "latitude": 61.202785,
+            "longitude": 24.62673
         }
     },
     {
@@ -15,8 +15,8 @@
         "description": "2011 valmistunut siipi päärakennuksen yhteydessä, jossa 10 x 2hh hotellitasoista huonetta.",
         "image": "require('../assets/Omenatarhan-sali.jpg')",
         "coordinates": {
-            "latitude": 61.2026426,
-            "longitude": 24.6256631
+            "latitude": 61.203080,
+            "longitude": 24.626310
         }
     },
     {
@@ -33,7 +33,7 @@
         "index": 19,
         "title": "Riihi",
         "description": "Juhlatilaksi hyvin soveltuva idyllinen tila. Takaosassa kiipeilyseinä. Päädyssä asustaa kesäisin kanat.",
-        "image": "require('../assets/Riihi2.jpg')",
+        "image": "require('../assets/Riihi.jpg')",
         "coordinates": {
             "latitude": 61.203311,
             "longitude": 24.625762
