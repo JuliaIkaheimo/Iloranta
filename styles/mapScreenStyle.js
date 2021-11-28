@@ -14,10 +14,6 @@ export default StyleSheet.create({
       fontWeight:"bold",
       color: "black"
     },
-    image: {
-      width: 110, 
-      height: 90
-    },
     pickerContainer: {
       width: "100%",
       height: "5%",
@@ -32,49 +28,48 @@ export default StyleSheet.create({
       width: "100%",
       height: "95%",
       alignItems: "center"
-  },
-
-
-  
-  centeredView: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 22
-  },
-  modalView: {
-    margin: 20,
-    backgroundColor: "white",
-    borderRadius: 20,
-    padding: 35,
-    alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2
     },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5
-  },
-  button: {
-    borderRadius: 20,
-    padding: 10,
-    elevation: 2
-  },
-  buttonOpen: {
-    backgroundColor: "#F194FF",
-  },
-  buttonClose: {
-    backgroundColor: "#2196F3",
-  },
-  textStyle: {
-    color: "white",
-    fontWeight: "bold",
-    textAlign: "center"
-  },
-  modalText: {
-    marginBottom: 15,
-    textAlign: "center"
-  }
+    //Modal
+    modalTitle: {
+      marginTop: 10,
+      marginBottom: 10,
+      textAlign: "center",
+      fontSize: 18,
+      fontWeight: "bold"
+    },
+    modalText: {
+      marginBottom: 15,
+      textAlign: "center",
+      fontSize: 16
+    },
+    image: {
+      width: 140, 
+      height: 110
+    },
+    centeredView: {
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    modalView: {
+      margin: 25,
+      backgroundColor: "white",
+      borderRadius: 20,
+      padding: 30,
+      alignItems: "center"
+    },
+    button: {
+      borderRadius: 10,
+      padding: 10,
+      paddingRight: 15,
+      paddingLeft: 15,
+      elevation: 2,
+      marginTop: 15,
+      backgroundColor: "#2196F3",
+    },
+    buttonTextStyle: {
+      color: "white",
+      fontWeight: "bold",
+      textAlign: "center"
+    }
  });

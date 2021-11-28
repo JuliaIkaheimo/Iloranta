@@ -124,8 +124,6 @@ export default function MapScreen() {
         latitude: parking.coordinates.latitude,
         longitude: parking.coordinates.longitude,
       }}
-      title = {parking.title}
-      description = {parking.description}
       key = {parking.index}
       onPress={() => {setModalVisible(true), setModalTitle(parking.title), setmodalDescription(parking.description),
         setModalDistance(getDistance({latitude: parking.coordinates.latitude, longitude: parking.coordinates.longitude},
@@ -148,40 +146,75 @@ export default function MapScreen() {
           </Picker>
         </View>
         <View style={styles.mapContainer}>
-
-
-        <Modal
-        animationType="slide"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-          setModalVisible(!modalVisible);
-        }}
-      >
-        <View style={styles.centeredView}>
-          <View style={styles.modalView}>
-
-            { modalTitle=="Sylvia Regina"?
-            <Image style={styles.image} resizeMode="cover" source={require('../assets/Ranta-alue.jpg')}/>
-              :
-              <Image style={styles.image} resizeMode="cover" source={require('../assets/Navetta.jpg')}/>
-            }
-            
-
-            <Text style={styles.modalText}>{modalTitle}</Text>
-            <Text style={styles.modalText}>{modalDescription}</Text>
-            <Text style={styles.distance}>
-              Etäisyys: {modalDistance} m
-            </Text>
-            <Pressable
-              style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
-            >
-              <Text style={styles.textStyle}>Sulje</Text>
-            </Pressable>
+          <Modal
+          animationType="slide"
+          transparent={true}
+          visible={modalVisible}
+          onRequestClose={() => {
+            setModalVisible(!modalVisible);
+          }}
+        >
+          <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+              {  
+                //Activities -->
+                  modalTitle == "Sylvia Regina"?
+                  <Image style={styles.image} resizeMode="cover" source={require('../assets/Ranta-alue.jpg')}/>
+                : modalTitle == "Ranta-alue"?
+                  <Image style={styles.image} resizeMode="cover" source={require('../assets/Ranta-alue.jpg')}/>
+                : modalTitle == "Ulkoaktiviteettialue"?
+                  <Image style={styles.image} resizeMode="cover" source={require('../assets/Ulkoaktiviteettialue.jpg')}/>
+                //Accommodations -->
+                : modalTitle == "Punainen talo"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/PunainenTalo.jpg')}/>
+                : modalTitle == "Sinikello M1"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/Sinikello.jpg')}/>
+                : modalTitle == "Viherpeippo M2"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/Viherpeippo.jpg')}/>
+                : modalTitle == "Punahilkka M3"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/Punahilkka.jpg')}/>
+                : modalTitle == "Lehmus M4"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/Lehmus.jpg')}/>
+                : modalTitle == "Pähkinä M5"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/Pahkina.jpg')}/>
+                : modalTitle == "Aitat"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/Aitat.jpg')}/>
+                //Buildings -->
+                : modalTitle == "Päärakennus"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/Paarakennus.jpg')}/>
+                : modalTitle == "Omenatarha"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/Omenatarhan-sali.jpg')}/>
+                : modalTitle == "Navetta"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/Navetta.jpg')}/>
+                : modalTitle == "Riihi"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/Riihi.jpg')}/>
+                //Nature -->
+                : modalTitle == "Peltolenkki"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/Luontopolut.jpg')}/>
+                : modalTitle == "Luontopolut"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/Luontopolut.jpg')}/>
+                : modalTitle == "Lintutorni"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/Luontopolut.jpg')}/>
+                : modalTitle == "Rantamäki"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/Luontopolut.jpg')}/>
+                //Parking -->
+                : modalTitle == "Parkkipaikat"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/Luontopolut.jpg')}/>
+                :null
+              }
+              <Text style={styles.modalTitle}>{modalTitle}</Text>
+              <Text style={styles.modalText}>{modalDescription}</Text>
+              <Text style={styles.distance}>
+                Etäisyys: {modalDistance} m
+              </Text>
+              <Pressable
+                style={styles.button}
+                onPress={() => setModalVisible(!modalVisible)}>
+                <Text style={styles.buttonTextStyle}>Sulje</Text>
+              </Pressable>
+            </View>
           </View>
-        </View>
-      </Modal>
+        </Modal>
 
 
           <MapView style={styles.mapStyle} 
