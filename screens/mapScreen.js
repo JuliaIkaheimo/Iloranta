@@ -4,7 +4,7 @@ import {View, Text, Image, Modal, Pressable} from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 
 import MenuButton from '../components/menuButton';
-import MapView, {PROVIDER_GOOGLE, Marker, Callout} from 'react-native-maps';
+import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 import * as Location from 'expo-location';
 
 import styles from '../styles/mapScreenStyle';
