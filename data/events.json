@@ -1,0 +1,38 @@
+[
+    {
+        "title": "Jouluinen tonttuseikkailu",
+        "description": "Ilorannan Jouluinen tontturetki -viikonloppu vie niin pienet kuin isotkin joulun odotuksen lämpimään tunnelmaan. Rauhallinen jouluvalaistu pihapiiri, tontut, lyhdyt, kynttilät ja Riihen hämyinen tunnelma jouluisine puuhineen tarjoaa oikeaa vanhanajan joulun rauhaa.",
+        "startday": "10.12.2021",
+        "endday": "12.12.2021",
+        "starttime": "17:00",
+        "endtime": "14:00",
+        "link": "https://iloranta.fi/tapahtumat/jouluinen-tonttuseikkailu"
+    },
+    {
+        "title": "Christmas adventure with the elves",
+        "description": "On our Adventure with the elves we will take our lanterns and walk in the footsteps of the elves around the forests of Iloranta, from the birdwatching tower to the campfire, everyone at their own pace. During the weekend we will experience adventures with the elves, enjoy good food, bake cookies, sing songs and make Christmas wreaths. Pancakes on open fire, Christmas food, sauna, and just relaxing together are also an important part of the elf life. On Sunday, everyone gets to bring home a freshly baked bread.",
+        "startday": "17.12.2021",
+        "endday": "19.12.2021",
+        "starttime": "17:00",
+        "endtime": "14:00",
+        "link": "https://iloranta.fi/tapahtumat/christmas-adventure-with-the-elves"
+    },
+    {
+        "title": "Ilorannan joulu - TÄYNNÄ",
+        "description": "Ilorannan joulu on lämminhenkinen juhla kauniissa maalaismaisemassa mukavassa seurassa tai omassa rauhassa. Pipareita, glögiä, joululauluja, joulun herkkuja ja ulkoilua perinteikkäässä maalaistalossa. Majoitus mökeissä, punaisessa pihatalossa tai päärakennuksessa joko yläkerrassa tai Omenatarha-hotellisiivessä.",
+        "startday": "23.12.2021",
+        "endday": "26.12.2021",
+        "starttime": "13:00",
+        "endtime": "14:00",
+        "link": "https://iloranta.fi/tapahtumat/ilorannan-joulu-taynna"
+    },
+    {
+        "title": "Ilorannan uusivuosi",
+        "description": "Tule yksin, kaksin, porukalla tai perheenä – Ilorannan tapaan pidämme huolen kaikista vieraistamme, niin nuorista kuin iäkkäämmistä, niin yksin saapuneista kuin isommalla ryhmällä tulleista. Vietä kanssamme ikimuistoinen ja iloinen vuodenvaihde! Juhlistetaan vuoden vaihtumista yhdessä riemuiten!",
+        "startday": "30.12.2021",
+        "endday": "02.01.2022",
+        "starttime": "12:00",
+        "endtime": "14:00",
+        "link": "https://iloranta.fi/tapahtumat/ilorannan_uusivuosi"
+    }
+]
