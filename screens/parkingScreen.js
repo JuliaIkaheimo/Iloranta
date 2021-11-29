@@ -3,7 +3,7 @@ import {View, Text, Image} from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 import styles from '../styles/parkingScreenStyle';
 import MenuButton from '../components/menuButton';
-import MapView, {PROVIDER_GOOGLE, Marker, Polyline, Circle} from 'react-native-maps';
+import MapView, {PROVIDER_GOOGLE, Marker, Circle} from 'react-native-maps';
 
 //Information about the different accommodation places
 import accommodation from '../data/accommodation.json';
