@@ -39,7 +39,7 @@ export default function App() {
             {props => <MapScreen {...props} />}
           </Drawer.Screen>
 
-          <Drawer.Screen name = "Pysäköinti" options={{ 
+          <Drawer.Screen name = "Saapuminen" options={{ 
             headerShown: false,
             drawerActiveTintColor:"#FBA00E",
             drawerLabelStyle:{fontWeight: "bold", fontSize: 17},

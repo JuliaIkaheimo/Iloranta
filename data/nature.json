@@ -12,6 +12,7 @@
         "index": 7,
         "title": "Luontopolut",
         "description": "Jääkausipolku 2,9km ja Voimametsäpolku 2km. Riippumattoalue ja metsälaavu löytyy myös reittien varrelta.",
+        "image": "require('../assets/Luontopolut.jpg')",
         "coordinates": {
             "latitude": 61.203227,
             "longitude": 24.626722

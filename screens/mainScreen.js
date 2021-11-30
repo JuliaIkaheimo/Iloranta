@@ -4,6 +4,7 @@ import styles from '../styles/mainScreenStyle';
 import MenuButton from '../components/menuButton';
 
 export default function MainScreen() {
+    
     return(
         <>
         <MenuButton />

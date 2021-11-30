@@ -16,17 +16,21 @@ export default StyleSheet.create({
     },
     parkingLotContainer: {
         width: "100%",
-        height: "67%",
+        height: "54%",
         padding: 20,
+        paddingTop: 10,
         alignItems: "center"
     },
     textContainer: {
         width: "80%",
-        height: "16%"
+        height: "29%",
+        alignItems: "center",
+        justifyContent:"center"
     },
     parkingLotContainerTexts: {
         height: "20%",
         justifyContent: "center"
+        
     },
 
     //Map
@@ -41,7 +45,7 @@ export default StyleSheet.create({
         fontSize: 25,
         color: "#FCBC52",
         fontWeight: "bold",
-        marginBottom: 25,
+        marginBottom: 14,
     },
     h2: {
         fontSize: 18,
