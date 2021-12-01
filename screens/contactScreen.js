@@ -6,10 +6,6 @@ import MenuButton from '../components/menuButton';
 import * as Linking from 'expo-linking';
 
 export default function ContactScreen() {
-    function callUs(){
-        //Open the dialing page in the phone
-        Linking.openURL('tel:+358503437770');
-    }
 
     return(
         <>
@@ -23,7 +19,7 @@ export default function ContactScreen() {
                     <Text style={styles.text}>+358 50343 7770</Text>
                     <Text style={[styles.text, {marginTop: 8}]}>Rukkoilantie 129</Text>
                     <Text style={styles.text}>14700 Hauho</Text>
-                    <TouchableHighlight style={styles.button} underlayColor="#F9A602" onPress={callUs}>
+                    <TouchableHighlight style={styles.button} underlayColor="#F9A602" onPress={() => Linking.openURL('tel:+358503437770')}>
                         <Text style={styles.buttonText}>Soita meille tästä</Text>
                     </TouchableHighlight>
                 </View>

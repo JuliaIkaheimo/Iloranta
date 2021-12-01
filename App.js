@@ -39,15 +39,6 @@ export default function App() {
             {props => <MapScreen {...props} />}
           </Drawer.Screen>
 
-          <Drawer.Screen name = "Saapuminen" options={{ 
-            headerShown: false,
-            drawerActiveTintColor:"#FBA00E",
-            drawerLabelStyle:{fontWeight: "bold", fontSize: 17},
-            drawerIcon: () => (
-            <Image style={{width:25, height:25}} source={require('./assets/star.png')}/>) }}>
-            {props => <ParkingScreen {...props} />}
-          </Drawer.Screen>
-
           <Drawer.Screen name = "Tapahtumat" options={{
             headerShown: false,
             drawerActiveTintColor:"#FBA00E",
@@ -55,6 +46,15 @@ export default function App() {
             drawerIcon: () => (
             <Image style={{width:25, height:25}} source={require('./assets/star.png')}/>) }}>
             {props => <EventScreen {...props} />}
+          </Drawer.Screen>
+
+          <Drawer.Screen name = "Saapuminen" options={{ 
+            headerShown: false,
+            drawerActiveTintColor:"#FBA00E",
+            drawerLabelStyle:{fontWeight: "bold", fontSize: 17},
+            drawerIcon: () => (
+            <Image style={{width:25, height:25}} source={require('./assets/star.png')}/>) }}>
+            {props => <ParkingScreen {...props} />}
           </Drawer.Screen>
 
           <Drawer.Screen name = "Yhteystiedot" options={{ 
