@@ -22,6 +22,7 @@ export default function App() {
         <Drawer.Navigator drawerContent={(props) => <CustomNavigation {...props} />}>
 
           <Drawer.Screen name = "Etusivu" options={{
+            
             headerShown: false,
             drawerActiveTintColor:"#FBA00E",
             drawerLabelStyle:{fontWeight: "bold", fontSize: 17},
@@ -29,7 +30,7 @@ export default function App() {
             <Image style={{width:25, height:25}} source={require('./assets/star.png')}/>) }}>
             {props => <MainScreen {...props} />}
           </Drawer.Screen>
-
+          
           <Drawer.Screen name = "Kartta" options={{ 
             headerShown: false,
             drawerActiveTintColor:"#FBA00E",

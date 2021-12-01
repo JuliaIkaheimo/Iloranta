@@ -25,7 +25,11 @@ export default function ContactScreen() {
             <Text style={styles.dateText}>
                 @ {startday} - {endday}
             </Text>
-            <Pressable style={styles.linkButton} onPress={() => Linking.openURL(link)}>
+            <Pressable style={styles.linkButton}
+             accessible={true}
+             accessibilityLabel="Lue lisää"
+             accessibilityHint="Vie Ilorannan nettisivujen kalenteriin"
+             onPress={() => Linking.openURL(link)}>
                 <Text style={styles.buttonText}>
                     Lue Lisää
                 </Text>
@@ -38,6 +42,7 @@ export default function ContactScreen() {
             <MenuButton />
             <View style={styles.container}>
                 <View style={styles.eventContainer}>
+                <View accessible={true}>
                     <Text style={styles.h1}>Ilorannan tapahtumat</Text>
                     <Text style={styles.text}>Täältä näet Ilorannassa sijaitsevat tapahtumat. Tapahtumien linkit vievät Ilorannan kotisivuille.</Text>
                     <FlatList
@@ -46,6 +51,7 @@ export default function ContactScreen() {
                         renderItem={renderItem}
                         keyExtractor={item => item.title}
                     />
+                </View>    
                 </View>
             </View>
         </>
