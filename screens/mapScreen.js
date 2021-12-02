@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import { getDistance } from 'geolib';
-import {View, Text} from 'react-native';
+import {View, Text, Image, Modal, Pressable} from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 
 import MenuButton from '../components/menuButton';
-import MapView, {PROVIDER_GOOGLE, Marker, Callout} from 'react-native-maps';
+import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 import * as Location from 'expo-location';
 
 import styles from '../styles/mapScreenStyle';
@@ -15,12 +15,7 @@ import buildings from '../data/buildings';
 import nature from '../data/nature';
 import parking from '../data/parking';
 
-import {useTranslation} from 'react-i18next';
-
 export default function MapScreen() {
-
-  const {t, i18n} = useTranslation();
-
   //For setting the status of locationing
   const [status, setStatus] = useState();
 
@@ -29,6 +24,12 @@ export default function MapScreen() {
 
   //For categorizing the different kind of locations
   const [currentCategory, setCurrentCategory] = useState('All');
+
+  //For the modal
+  const [modalVisible, setModalVisible] = useState(false);
+  const [modalTitle, setModalTitle] = useState();
+  const [modalDescription, setmodalDescription] = useState();
+  const [modalDistance, setModalDistance] = useState({});
 
   useEffect(() => {
     //Ask user's permission for locationing
@@ -49,6 +50,7 @@ export default function MapScreen() {
   },[]);
 
   const getMarkers = () => {
+    //Show the markers based on the selected category
     switch (currentCategory) {
       case 'activities': return chosenActivities;
       case 'accommodations': return chosenAccommodations;
@@ -66,21 +68,11 @@ export default function MapScreen() {
         latitude: activities.coordinates.latitude,
         longitude: activities.coordinates.longitude,
       }}
-      title = {activities.title}
-      description = {activities.description}
       key = {activities.index}
-    >
-      <Callout style={styles.calloutBubble}>
-          <View>
-            {/*<Text><Image source={{uri: activities.image}} style={{width: 300, height: 200}} resizeMode="cover" /></Text>*/}
-            <Text style={styles.titleText}>{activities.title}</Text>
-            <Text>{activities.description}</Text>
-            <Text style={styles.distance}>
-              {t('distance')}: {getDistance({latitude: activities.coordinates.latitude, longitude: activities.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
-            </Text>
-          </View>
-      </Callout>
-    </Marker>
+      onPress={() => {setModalVisible(true), setModalTitle(activities.title), setmodalDescription(activities.description),
+        setModalDistance(getDistance({latitude: activities.coordinates.latitude, longitude: activities.coordinates.longitude},
+          {latitude: userLocation.latitude, longitude: userLocation.longitude}))}}
+    /> 
   ));
 
   const chosenAccommodations = accommodations.map((accommodations) => (
@@ -90,21 +82,11 @@ export default function MapScreen() {
         latitude: accommodations.coordinates.latitude,
         longitude: accommodations.coordinates.longitude,
       }}
-      title = {accommodations.title}
-      description = {accommodations.description}
       key = {accommodations.index}
-      >
-      <Callout style={styles.calloutBubble}>
-          <View>
-            {/*<Text><Image source={{uri: accommodations.image}} style={{width: 300, height: 200}} resizeMode="cover" /></Text>*/}
-            <Text style={styles.titleText}>{accommodations.title}</Text>
-            <Text>{accommodations.description}</Text>
-            <Text style={styles.distance}>
-            {t('distance')}: {getDistance({latitude: accommodations.coordinates.latitude, longitude: accommodations.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
-            </Text>
-          </View>
-      </Callout>
-    </Marker>
+      onPress={() => {setModalVisible(true), setModalTitle(accommodations.title), setmodalDescription(accommodations.description),
+        setModalDistance(getDistance({latitude: accommodations.coordinates.latitude, longitude: accommodations.coordinates.longitude},
+          {latitude: userLocation.latitude, longitude: userLocation.longitude}))}}
+      />
   ));
 
   const chosenNature = nature.map((nature) => (
@@ -114,21 +96,11 @@ export default function MapScreen() {
         latitude: nature.coordinates.latitude,
         longitude: nature.coordinates.longitude,
       }}
-      title = {nature.title}
-      description = {nature.description}
       key = {nature.index}
-      >
-      <Callout style={styles.calloutBubble}>
-          <View>
-            {/*<Text><Image source={{uri: nature.image}} style={{width: 300, height: 200}} resizeMode="cover" /></Text>*/}
-            <Text style={styles.titleText}>{nature.title}</Text>
-            <Text>{nature.description}</Text>
-            <Text style={styles.distance}>
-            {t('distance')}: {getDistance({latitude: nature.coordinates.latitude, longitude: nature.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
-            </Text>
-          </View>
-      </Callout>
-    </Marker>
+      onPress={() => {setModalVisible(true), setModalTitle(nature.title), setmodalDescription(nature.description),
+        setModalDistance(getDistance({latitude: nature.coordinates.latitude, longitude: nature.coordinates.longitude},
+          {latitude: userLocation.latitude, longitude: userLocation.longitude}))}}
+      />
   ));
 
   const chosenBuildings = buildings.map((buildings) => (
@@ -138,21 +110,11 @@ export default function MapScreen() {
         latitude: buildings.coordinates.latitude,
         longitude: buildings.coordinates.longitude,
       }}
-      title = {buildings.title}
-      description = {buildings.description}
       key = {buildings.index}
-      >
-      <Callout style={styles.calloutBubble}>
-          <View>
-            {/*<Text><Image source={{uri: buildings.image}} style={{width: 300, height: 200}} resizeMode="cover" /></Text>*/}
-            <Text style={styles.titleText}>{buildings.title}</Text>
-            <Text>{buildings.description}</Text>
-            <Text style={styles.distance}>
-            {t('distance')}: {getDistance({latitude: buildings.coordinates.latitude, longitude: buildings.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
-            </Text>
-          </View>
-      </Callout>
-    </Marker>
+      onPress={() => {setModalVisible(true), setModalTitle(buildings.title), setmodalDescription(buildings.description),
+        setModalDistance(getDistance({latitude: buildings.coordinates.latitude, longitude: buildings.coordinates.longitude},
+          {latitude: userLocation.latitude, longitude: userLocation.longitude}))}}
+      />
   ));
 
   const chosenParking = parking.map((parking) => (
@@ -162,21 +124,11 @@ export default function MapScreen() {
         latitude: parking.coordinates.latitude,
         longitude: parking.coordinates.longitude,
       }}
-      title = {parking.title}
-      description = {parking.description}
       key = {parking.index}
-      >
-      <Callout style={styles.calloutBubble}>
-          <View>
-            {/*<Text><Image source={{uri: parking.image}} style={{width: 300, height: 200}} resizeMode="cover" /></Text>*/}
-            <Text style={styles.titleText}>{parking.title}</Text>
-            <Text>{parking.description}</Text>
-            <Text style={styles.distance}>
-            {t('distance')}: {getDistance({latitude: parking.coordinates.latitude, longitude: parking.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
-            </Text>
-          </View>
-      </Callout>
-    </Marker>
+      onPress={() => {setModalVisible(true), setModalTitle(parking.title), setmodalDescription(parking.description),
+        setModalDistance(getDistance({latitude: parking.coordinates.latitude, longitude: parking.coordinates.longitude},
+          {latitude: userLocation.latitude, longitude: userLocation.longitude}))}}
+      />
   ));
 
   return (
@@ -185,21 +137,91 @@ export default function MapScreen() {
       <View style={styles.container}>
         <View style={styles.pickerContainer}>
           <Picker style={styles.pickerText} selectedValue={currentCategory} onValueChange={(itemValue) => setCurrentCategory(itemValue)}>
-            <Picker.Item key="kaikki" label={t('alldestinations')}value="All" />
-            <Picker.Item key="ulkoliikunta" label={t('activitiesandexercise')} value="activities" />
-            <Picker.Item key="majoitus" label={t('accommodation')} value="accommodations" />
-            <Picker.Item key="luontokohteet" label={t('naturalsites')} value="nature" />
-            <Picker.Item key="paarakennukset" label={t('mainbuildings')}value="buildings" />
-            <Picker.Item key="parkkipaikat" label={t('parkinglots')} value="parking" />
+            <Picker.Item key="kaikki" label="Kaikki kohteet" value="All" />
+            <Picker.Item key="ulkoliikunta" label="Ulkoilu ja liikunta" value="activities" />
+            <Picker.Item key="majoitus" label="Majoitus" value="accommodations" />
+            <Picker.Item key="luontokohteet" label="Luontokohteet" value="nature" />
+            <Picker.Item key="paarakennukset" label="Päärakennukset" value="buildings" />
+            <Picker.Item key="parkkipaikat" label="Parkkipaikat" value="parking" />
           </Picker>
         </View>
         <View style={styles.mapContainer}>
+          <Modal
+          animationType="slide"
+          transparent={true}
+          visible={modalVisible}
+          onRequestClose={() => {
+            setModalVisible(!modalVisible);
+          }}
+        >
+          <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+              {  
+                //Activities -->
+                  modalTitle == "Sylvia Regina"?
+                  <Image style={styles.image} resizeMode="cover" source={require('../assets/Ranta-alue.jpg')}/>
+                : modalTitle == "Ranta-alue"?
+                  <Image style={styles.image} resizeMode="cover" source={require('../assets/Ranta-alue.jpg')}/>
+                : modalTitle == "Ulkoaktiviteettialue"?
+                  <Image style={styles.image} resizeMode="cover" source={require('../assets/Ulkoaktiviteettialue.jpg')}/>
+                //Accommodations -->
+                : modalTitle == "Punainen talo"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/PunainenTalo.jpg')}/>
+                : modalTitle == "Sinikello M1"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/Sinikello.jpg')}/>
+                : modalTitle == "Viherpeippo M2"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/Viherpeippo.jpg')}/>
+                : modalTitle == "Punahilkka M3"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/Punahilkka.jpg')}/>
+                : modalTitle == "Lehmus M4"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/Lehmus.jpg')}/>
+                : modalTitle == "Pähkinä M5"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/Pahkina.jpg')}/>
+                : modalTitle == "Aitat"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/Aitat.jpg')}/>
+                //Buildings -->
+                : modalTitle == "Päärakennus"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/Paarakennus.jpg')}/>
+                : modalTitle == "Omenatarha"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/Omenatarhan-sali.jpg')}/>
+                : modalTitle == "Navetta"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/Navetta.jpg')}/>
+                : modalTitle == "Riihi"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/Riihi.jpg')}/>
+                //Nature -->
+                : modalTitle == "Peltolenkki"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/Luontopolut.jpg')}/>
+                : modalTitle == "Luontopolut"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/Luontopolut.jpg')}/>
+                : modalTitle == "Lintutorni"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/Luontopolut.jpg')}/>
+                : modalTitle == "Rantamäki"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/Luontopolut.jpg')}/>
+                //Parking -->
+                : modalTitle == "Parkkipaikat"?
+                <Image style={styles.image} resizeMode="cover" source={require('../assets/Luontopolut.jpg')}/>
+                :null
+              }
+              <Text style={styles.modalTitle}>{modalTitle}</Text>
+              <Text style={styles.modalText}>{modalDescription}</Text>
+              <Text style={styles.distance}>
+                Etäisyys: {modalDistance} m
+              </Text>
+              <Pressable
+                style={styles.button}
+                onPress={() => setModalVisible(!modalVisible)}>
+                <Text style={styles.buttonTextStyle}>Sulje</Text>
+              </Pressable>
+            </View>
+          </View>
+        </Modal>
+
+
           <MapView style={styles.mapStyle} 
             provider={PROVIDER_GOOGLE}
             mapType="satellite"
             showsUserLocation={true}
-            initialRegion={{ latitude: 61.202759, longitude: 24.626741, latitudeDelta: 0, longitudeDelta: 0.004 }}
-          >
+            initialRegion={{ latitude: 61.202759, longitude: 24.626741, latitudeDelta: 0, longitudeDelta: 0.004 }}>
             {getMarkers()}
           </MapView>
         </View>

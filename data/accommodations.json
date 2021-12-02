@@ -3,6 +3,7 @@
         "index": 4,
         "title": "Punainen talo",
         "description": "Majoitushuoneet 5-16 löytyvät tästä talosta, kahdesta kerroksesta. Takapihalta löytyy kesäisin polkupyöriä ja talvisin potkureita ja pulkkia.",
+        "image": "require('../assets/PunainenTalo.jpg')",
         "coordinates": {
             "latitude": 61.202519,
             "longitude": 24.626357
@@ -32,6 +33,7 @@
         "index": 14,
         "title": "Punahilkka M3",
         "description": "Kodikas mökki metsän siimeksessä. Mökissä on kaksi wc/suihkuyhdistelmää ja kaksi uloskäyntiä. Mökissä on vakiovarusteena TV, mikroaaltouuni, vedenkeitin, kahvinkeitin ja jääkaappi.",
+        "image": "require('../assets/Punahilkka.jpg')",
         "coordinates": {
             "latitude": 61.201350,
             "longitude": 24.627496
