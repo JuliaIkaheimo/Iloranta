@@ -15,7 +15,12 @@ import buildings from '../data/buildings';
 import nature from '../data/nature';
 import parking from '../data/parking';
 
+import {useTranslation} from 'react-i18next';
+
 export default function MapScreen() {
+
+  const {t, i18n} = useTranslation();
+
   //For setting the status of locationing
   const [status, setStatus] = useState();
 
@@ -71,7 +76,7 @@ export default function MapScreen() {
             <Text style={styles.titleText}>{activities.title}</Text>
             <Text>{activities.description}</Text>
             <Text style={styles.distance}>
-              Etäisyys: {getDistance({latitude: activities.coordinates.latitude, longitude: activities.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
+              {t('distance')}: {getDistance({latitude: activities.coordinates.latitude, longitude: activities.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
             </Text>
           </View>
       </Callout>
@@ -95,7 +100,7 @@ export default function MapScreen() {
             <Text style={styles.titleText}>{accommodations.title}</Text>
             <Text>{accommodations.description}</Text>
             <Text style={styles.distance}>
-              Etäisyys: {getDistance({latitude: accommodations.coordinates.latitude, longitude: accommodations.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
+            {t('distance')}: {getDistance({latitude: accommodations.coordinates.latitude, longitude: accommodations.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
             </Text>
           </View>
       </Callout>
@@ -119,7 +124,7 @@ export default function MapScreen() {
             <Text style={styles.titleText}>{nature.title}</Text>
             <Text>{nature.description}</Text>
             <Text style={styles.distance}>
-              Etäisyys: {getDistance({latitude: nature.coordinates.latitude, longitude: nature.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
+            {t('distance')}: {getDistance({latitude: nature.coordinates.latitude, longitude: nature.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
             </Text>
           </View>
       </Callout>
@@ -143,7 +148,7 @@ export default function MapScreen() {
             <Text style={styles.titleText}>{buildings.title}</Text>
             <Text>{buildings.description}</Text>
             <Text style={styles.distance}>
-              Etäisyys: {getDistance({latitude: buildings.coordinates.latitude, longitude: buildings.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
+            {t('distance')}: {getDistance({latitude: buildings.coordinates.latitude, longitude: buildings.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
             </Text>
           </View>
       </Callout>
@@ -167,7 +172,7 @@ export default function MapScreen() {
             <Text style={styles.titleText}>{parking.title}</Text>
             <Text>{parking.description}</Text>
             <Text style={styles.distance}>
-              Etäisyys: {getDistance({latitude: parking.coordinates.latitude, longitude: parking.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
+            {t('distance')}: {getDistance({latitude: parking.coordinates.latitude, longitude: parking.coordinates.longitude},{latitude: userLocation.latitude, longitude: userLocation.longitude})} m
             </Text>
           </View>
       </Callout>
@@ -180,12 +185,12 @@ export default function MapScreen() {
       <View style={styles.container}>
         <View style={styles.pickerContainer}>
           <Picker style={styles.pickerText} selectedValue={currentCategory} onValueChange={(itemValue) => setCurrentCategory(itemValue)}>
-            <Picker.Item key="kaikki" label="Kaikki kohteet" value="All" />
-            <Picker.Item key="ulkoliikunta" label="Ulkoilu ja liikunta" value="activities" />
-            <Picker.Item key="majoitus" label="Majoitus" value="accommodations" />
-            <Picker.Item key="luontokohteet" label="Luontokohteet" value="nature" />
-            <Picker.Item key="paarakennukset" label="Päärakennukset" value="buildings" />
-            <Picker.Item key="parkkipaikat" label="Parkkipaikat" value="parking" />
+            <Picker.Item key="kaikki" label={t('alldestinations')}value="All" />
+            <Picker.Item key="ulkoliikunta" label={t('activitiesandexercise')} value="activities" />
+            <Picker.Item key="majoitus" label={t('accommodation')} value="accommodations" />
+            <Picker.Item key="luontokohteet" label={t('naturalsites')} value="nature" />
+            <Picker.Item key="paarakennukset" label={t('mainbuildings')}value="buildings" />
+            <Picker.Item key="parkkipaikat" label={t('parkinglots')} value="parking" />
           </Picker>
         </View>
         <View style={styles.mapContainer}>

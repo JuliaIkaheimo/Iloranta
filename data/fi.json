@@ -1,0 +1,23 @@
+{
+    "translation": {
+      "hello":"Iloranta on levähdyspaikka nykypäivän kiireen keskellä. Ystävällinen hymy, hämäläinen maaseutu, rauhoittava luonto, liikunta ja rentoutuminen odottavat lomavieraita, koululaisia, yrityksiä ja maailmanmatkaajia. \n Tule sellaisena kuin olet. \n Tervetuloa perheeseen!",
+      "question":"Onko sinulla kysyttävää?",
+      "frontpage":"Etusivu",
+      "map":"Kartta",
+      "parking":"Pysäköinti",
+      "contact":"Yhteystiedot",
+      "socialmedia":"Seuraa meitä somessa:",
+      "customerservice":"Asiakaspalvelu:",
+      "callus":"Soita meille tästä",
+      "distance":"Etäisyys",
+      "alldestinations":"Kaikki kohteet",
+      "activitiesandexercise":"Ulkoilu ja liikunta",
+      "accommodation":"Majoitus",
+      "naturalsites":"Luontokohteet",
+      "mainbuildings":"Päärakennukset",
+      "parkinglots":"Parkkipaikat",
+      "ilorantaparking":"Pysäköiminen Ilorannassa",
+      "selectaccommodation":"Etsi valikosta majoituspaikkasi ja katso kartalta sopivin pysäköintipaikka.",
+      "mostsuitableparking":"Sinulle sopivin parkkipaikka on:"
+    }
+  }

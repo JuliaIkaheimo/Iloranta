@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Image} from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -11,16 +11,23 @@ import ContactScreen from './screens/contactScreen';
 import ParkingScreen from './screens/parkingScreen';
 import CustomNavigation from './components/customNavigation';
 
+import {useTranslation} from 'react-i18next';
+
 const Drawer = createDrawerNavigator();
 
+
 export default function App() {
+
+  const {t, i18n} = useTranslation();
+
   return (
     <>
+
       <NavigationContainer>
         {/* CustomNavigation contains the custom outfit of the menu. See customNavigation.js */}
         <Drawer.Navigator drawerContent={(props) => <CustomNavigation {...props} />}>
 
-          <Drawer.Screen name = "Etusivu" options={{
+          <Drawer.Screen name = {t('frontpage')} options={{
             headerShown: false,
             drawerActiveTintColor:"#FBA00E",
             drawerLabelStyle:{fontWeight: "bold", fontSize: 17},
@@ -29,7 +36,7 @@ export default function App() {
             {props => <MainScreen {...props} />}
           </Drawer.Screen>
 
-          <Drawer.Screen name = "Kartta" options={{ 
+          <Drawer.Screen name = {t('map')}options={{ 
             headerShown: false,
             drawerActiveTintColor:"#FBA00E",
             drawerLabelStyle:{fontWeight: "bold", fontSize: 17},
@@ -38,7 +45,7 @@ export default function App() {
             {props => <MapScreen {...props} />}
           </Drawer.Screen>
 
-          <Drawer.Screen name = "Pysäköinti" options={{ 
+          <Drawer.Screen name = {t('parking')} options={{ 
             headerShown: false,
             drawerActiveTintColor:"#FBA00E",
             drawerLabelStyle:{fontWeight: "bold", fontSize: 17},
@@ -47,7 +54,7 @@ export default function App() {
             {props => <ParkingScreen {...props} />}
           </Drawer.Screen>
 
-          <Drawer.Screen name = "Yhteystiedot" options={{ 
+          <Drawer.Screen name = {t('contact')} options={{ 
             headerShown: false,
             drawerActiveTintColor:"#FBA00E",
             drawerLabelStyle:{fontWeight: "bold", fontSize: 17},
@@ -58,6 +65,7 @@ export default function App() {
 
         </Drawer.Navigator>
       </NavigationContainer>
+
       <StatusBar translucent={false} backgroundColor={"white"}/>
     </>
   );

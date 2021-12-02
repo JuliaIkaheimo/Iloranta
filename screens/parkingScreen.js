@@ -8,8 +8,13 @@ import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 //Information about the different accommodation places
 import accommodation from '../data/accommodation.json';
 
+import {useTranslation} from 'react-i18next';
+
 
 export default function ParkingScreen2() {
+    
+    const {t, i18n} = useTranslation();
+
     const [selectedAccommodation, setSelectedAccommodation] = useState("Päärakennus");
     const [parking, setParking] = useState("Voit jättää autosi Punaisen talon taakse tai kesällä Sylvia Reginan alapuolelle.");
     const [coordinates, setCoordinates] = useState({latitude: 61.20300, longitude: 24.62669});
@@ -43,8 +48,8 @@ export default function ParkingScreen2() {
             <MenuButton />
             <View style={styles.container}>
                 <View style={styles.textContainer}>
-                    <Text style={styles.h1}>Pysäköiminen Ilorannassa</Text>
-                    <Text style={styles.text}>Etsi valikosta majoituspaikkasi ja katso kartalta sopivin pysäköintipaikka.</Text>
+                    <Text style={styles.h1}>{t('ilorantaparking')}</Text>
+                    <Text style={styles.text}>{t('selectaccommodation')}</Text>
                 </View>
                 <View style={styles.pickerContainer}>
                     <Picker style={styles.pickerText}
@@ -63,7 +68,7 @@ export default function ParkingScreen2() {
                 </View>
                 <View style={styles.parkingLotContainer}>
                     <View style={styles.parkingLotContainerTexts}>
-                        <Text style={styles.h2}>Sinulle sopivin parkkipaikka on:</Text>
+                        <Text style={styles.h2}>{t('mostsuitableparking')}</Text>
                         <Text style={styles.text}>{parking}</Text>
                     </View>
                     <MapView style={styles.mapStyle}
