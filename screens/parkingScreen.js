@@ -37,9 +37,11 @@ export default function ParkingScreen2() {
             <MenuButton />
             <View style={styles.container}>
                 <View style={styles.textContainer}>
+                <View accessible={true}>   
                     <Text style={styles.h1}>Saapuminen Ilorantaan</Text>
                     <Text style={styles.text}>Aja päärakennuksen pihaan kartan osoittamasta tienhaarasta. Käy ilmoittautumassa ja tiedustelemassa majoituksen sijainti. {"\n"}{"\n"}Voit etsiä valikosta majoituspaikkasi ja katsoa kartalta sopivan pysäköintipaikan.</Text>
                     <Text style={[styles.text, {marginTop: 6}]}></Text>
+                </View>
                 </View>
                 <View style={styles.pickerContainer}>
                     <Picker style={styles.pickerText}
@@ -59,8 +61,10 @@ export default function ParkingScreen2() {
                 </View>
                 <View style={styles.parkingLotContainer}>
                     <View style={styles.parkingLotContainerTexts}>
+                    <View accessible={true}>
                         <Text style={styles.h2}>Sinulle sopivin parkkipaikka on:</Text>
                         <Text style={styles.text}>{parking}</Text>
+                    </View>
                     </View>
                     <MapView style={styles.mapStyle}
                         provider={PROVIDER_GOOGLE}
