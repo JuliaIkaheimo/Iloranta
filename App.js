@@ -22,7 +22,6 @@ export default function App() {
         <Drawer.Navigator drawerContent={(props) => <CustomNavigation {...props} />}>
 
           <Drawer.Screen name = "Etusivu" options={{
-            
             headerShown: false,
             drawerActiveTintColor:"#FBA00E",
             drawerLabelStyle:{fontWeight: "bold", fontSize: 17},

@@ -6,7 +6,7 @@ import * as Linking from 'expo-linking';
 
 import events from '../data/events';
 
-export default function ContactScreen() {
+export default function EventScreen() {
 
     const renderItem = ({ item }) => (
         <Item 
