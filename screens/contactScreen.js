@@ -22,6 +22,7 @@ export default function ContactScreen() {
                     <Pressable style={styles.button}
                     accessible={true}
                     accessibilityLabel="Soita meille!"
+                    //By clicking, open the dialing page
                     onPress={() => Linking.openURL('tel:+358503437770')}>
                         <Text style={styles.buttonText}>Soita meille tästä</Text>
                     </Pressable>
