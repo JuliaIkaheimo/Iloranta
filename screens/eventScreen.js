@@ -8,6 +8,7 @@ import events from '../data/events';
 
 export default function ContactScreen() {
 
+    //Renders the item
     const renderItem = ({ item }) => (
         <Item 
             title={item.title}
@@ -17,6 +18,7 @@ export default function ContactScreen() {
         />
     );
 
+    //Building the item view
     const Item = ({ title, startday, endday, link }) => (
         <View style={styles.item}>
             <Text style={styles.title}>
