@@ -11,11 +11,11 @@ export default StyleSheet.create({
     },
      logo:{
        flex: 1,
-       paddingBottom:10
+       paddingBottom:10,
       },
      textContainer:{
        flex:2,
-       width:'80%',
+       width:'90%',
        justifyContent: 'space-around',
        alignItems:'flex-start',
        padding: 40,

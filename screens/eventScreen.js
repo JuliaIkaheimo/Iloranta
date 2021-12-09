@@ -3,10 +3,13 @@ import {View, Text, FlatList, Pressable} from 'react-native';
 import styles from '../styles/eventScreenStyle';
 import MenuButton from '../components/menuButton';
 import * as Linking from 'expo-linking';
+import {useTranslation} from 'react-i18next';
 
 import events from '../data/events';
 
 export default function EventScreen() {
+
+    const {t, i18n} = useTranslation();
 
     const renderItem = ({ item }) => (
         <Item 
@@ -43,8 +46,8 @@ export default function EventScreen() {
             <View style={styles.container}>
                 <View style={styles.eventContainer}>
                 <View accessible={true}>
-                    <Text style={styles.h1}>Ilorannan tapahtumat</Text>
-                    <Text style={styles.text}>Täältä näet Ilorannassa sijaitsevat tapahtumat. Tapahtumien linkit vievät Ilorannan kotisivuille.</Text>
+                    <Text style={styles.h1}>{t('eventsiniloranta')}</Text>
+                    <Text style={styles.text}>{t('eventlist')}</Text>
                     <FlatList
                         data={events}
                         style={styles.itemContainer}

@@ -3,7 +3,11 @@ import {View, Pressable, Image, Text} from 'react-native';
 import styles from '../styles/componentsStyle';
 import * as Linking from 'expo-linking';
 
+import {useTranslation} from 'react-i18next';
+
 export default function SocialMediaButtons(props) {
+
+    const {t, i18n} = useTranslation();
 
     function openSocialMediaSite(site){
         //Open the social media site depending on the parameter value
@@ -22,7 +26,7 @@ export default function SocialMediaButtons(props) {
     }
     return(
         <View style={styles.container}>
-            <Text style={{marginTop: 35, color: "#2F2F2F", fontSize: props.fontSize, fontWeight: "bold"}}>Seuraa meitä somessa:</Text>
+            <Text style={{marginTop: 35, color: "#2F2F2F", fontSize: props.fontSize, fontWeight: "bold"}}>{t('socialmedia')}</Text>
             <View style={styles.iconContainer}>
                 <Pressable
                 accessible={true}
