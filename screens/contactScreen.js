@@ -28,7 +28,7 @@ export default function ContactScreen() {
 
                     //By clicking, open the dialing page
                     onPress={() => Linking.openURL('tel:+358503437770')}>
-                        <Text style={styles.buttonText}>{t('question')}</Text>
+                        <Text style={styles.buttonText}>{t('callus')}</Text>
                     </Pressable>
 
                 </View>
