@@ -1,14 +1,17 @@
 import React, {useState, useEffect} from 'react';
-import { getDistance } from 'geolib';
-import {View, Text, Image, Modal, Pressable} from 'react-native';
-import { Picker } from '@react-native-picker/picker';
+import {View, Text, Modal, Pressable} from 'react-native';
 
-import MenuButton from '../components/menuButton';
+import { Picker } from '@react-native-picker/picker';
+import { getDistance } from 'geolib';
 import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 import * as Location from 'expo-location';
 
+import MenuButton from '../components/menuButton';
+import ImageComponent from '../components/imageComponent';
+
 import styles from '../styles/mapScreenStyle';
 
+//Import json files that contain information of different places in Iloranta
 import accommodations from '../data/accommodations';
 import activities from '../data/activities';
 import buildings from '../data/buildings';
@@ -152,76 +155,26 @@ export default function MapScreen() {
         </View>
         <View style={styles.mapContainer}>
           <Modal
-          animationType="slide"
-          transparent={true}
-          visible={modalVisible}
-          onRequestClose={() => {
-            setModalVisible(!modalVisible);
-          }}
-        >
-          <View style={styles.centeredView}>
-            <View style={styles.modalView}>
-              {  
-                //Activities -->
-                  modalTitle == "Sylvia Regina"?
-                  <Image style={styles.image} resizeMode="cover" source={require('../assets/Ranta-alue.jpg')}/>
-                : modalTitle == "Ranta-alue"?
-                  <Image style={styles.image} resizeMode="cover" source={require('../assets/Ranta-alue.jpg')}/>
-                : modalTitle == "Ulkoaktiviteettialue"?
-                  <Image style={styles.image} resizeMode="cover" source={require('../assets/Ulkoaktiviteettialue.jpg')}/>
-                //Accommodations -->
-                : modalTitle == "Punainen talo"?
-                <Image style={styles.image} resizeMode="cover" source={require('../assets/PunainenTalo.jpg')}/>
-                : modalTitle == "Sinikello M1"?
-                <Image style={styles.image} resizeMode="cover" source={require('../assets/Sinikello.jpg')}/>
-                : modalTitle == "Viherpeippo M2"?
-                <Image style={styles.image} resizeMode="cover" source={require('../assets/Viherpeippo.jpg')}/>
-                : modalTitle == "Punahilkka M3"?
-                <Image style={styles.image} resizeMode="cover" source={require('../assets/Punahilkka.jpg')}/>
-                : modalTitle == "Lehmus M4"?
-                <Image style={styles.image} resizeMode="cover" source={require('../assets/Lehmus.jpg')}/>
-                : modalTitle == "Pähkinä M5"?
-                <Image style={styles.image} resizeMode="cover" source={require('../assets/Pahkina.jpg')}/>
-                : modalTitle == "Aitat"?
-                <Image style={styles.image} resizeMode="cover" source={require('../assets/Aitat.jpg')}/>
-                //Buildings -->
-                : modalTitle == "Päärakennus"?
-                <Image style={styles.image} resizeMode="cover" source={require('../assets/Paarakennus.jpg')}/>
-                : modalTitle == "Omenatarha"?
-                <Image style={styles.image} resizeMode="cover" source={require('../assets/Omenatarhan-sali.jpg')}/>
-                : modalTitle == "Navetta"?
-                <Image style={styles.image} resizeMode="cover" source={require('../assets/Navetta.jpg')}/>
-                : modalTitle == "Riihi"?
-                <Image style={styles.image} resizeMode="cover" source={require('../assets/Riihi.jpg')}/>
-                //Nature -->
-                : modalTitle == "Peltolenkki"?
-                <Image style={styles.image} resizeMode="cover" source={require('../assets/Luontopolut.jpg')}/>
-                : modalTitle == "Luontopolut"?
-                <Image style={styles.image} resizeMode="cover" source={require('../assets/Luontopolut.jpg')}/>
-                : modalTitle == "Lintutorni"?
-                <Image style={styles.image} resizeMode="cover" source={require('../assets/Luontopolut.jpg')}/>
-                : modalTitle == "Rantamäki"?
-                <Image style={styles.image} resizeMode="cover" source={require('../assets/Luontopolut.jpg')}/>
-                //Parking -->
-                : modalTitle == "Parkkipaikat"?
-                <Image style={styles.image} resizeMode="cover" source={require('../assets/Luontopolut.jpg')}/>
-                :null
-              }
-              <Text style={styles.modalTitle}>{modalTitle}</Text>
-              <Text style={styles.modalText}>{modalDescription}</Text>
-              <Text style={styles.distance}>
-              {t('distance')}: {modalDistance} m
-              </Text>
-              <Pressable
-                style={styles.button}
-                onPress={() => setModalVisible(!modalVisible)}>
-                <Text style={styles.buttonTextStyle}>Sulje</Text>
-              </Pressable>
+            animationType="slide"
+            transparent={true}
+            visible={modalVisible}
+            onRequestClose={() => {
+              setModalVisible(!modalVisible);
+            }}>
+            <View style={styles.centeredView}>
+              <View style={styles.modalView}>
+                <ImageComponent title={modalTitle}/>
+                <Text style={styles.modalTitle}>{modalTitle}</Text>
+                <Text style={styles.modalText}>{modalDescription}</Text>
+                <Text style={styles.distance}>{t('distance')}: {modalDistance} m</Text>
+                <Pressable
+                  style={styles.button}
+                  onPress={() => setModalVisible(!modalVisible)}>
+                  <Text style={styles.buttonTextStyle}>Sulje</Text>
+                </Pressable>
+              </View>
             </View>
-          </View>
-        </Modal>
-
-
+          </Modal>
           <MapView style={styles.mapStyle} 
             provider={PROVIDER_GOOGLE}
             mapType="satellite"

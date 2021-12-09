@@ -3,12 +3,11 @@ import {View, Text, FlatList, Pressable} from 'react-native';
 import styles from '../styles/eventScreenStyle';
 import MenuButton from '../components/menuButton';
 import * as Linking from 'expo-linking';
+import {useTranslation} from 'react-i18next';
 
 import events from '../data/events';
 
-import {useTranslation} from 'react-i18next';
-
-export default function ContactScreen() {
+export default function EventScreen() {
 
     const {t, i18n} = useTranslation();
 

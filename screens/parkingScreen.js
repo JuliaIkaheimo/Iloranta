@@ -1,17 +1,18 @@
 import React, {useState, useEffect} from 'react';
 import {View, Text, Image} from 'react-native';
-import {Picker} from '@react-native-picker/picker';
+
 import styles from '../styles/parkingScreenStyle';
 import MenuButton from '../components/menuButton';
+
 import MapView, {PROVIDER_GOOGLE, Marker, Circle} from 'react-native-maps';
-
-//Information about the different accommodation places
-import accommodation from '../data/accommodation.json';
-
+import {Picker} from '@react-native-picker/picker';
 import {useTranslation} from 'react-i18next';
 
+//Information about different accommodation places
+import accommodation from '../data/accommodation.json';
 
-export default function ParkingScreen2() {
+
+export default function ParkingScreen() {
 
     const {t, i18n} = useTranslation();
 
