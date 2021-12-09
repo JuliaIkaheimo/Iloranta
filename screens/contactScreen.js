@@ -4,8 +4,12 @@ import styles from '../styles/contactScreenStyle';
 import SocialMediaButtons from '../components/socialMediaButtons';
 import MenuButton from '../components/menuButton';
 import * as Linking from 'expo-linking';
+import {useTranslation} from 'react-i18next';
 
 export default function ContactScreen() {
+
+    const {t, i18n} = useTranslation();
+    
     function callUs(){
         //Open the dialing page in the phone
         Linking.openURL('tel:+358503437770');
@@ -17,8 +21,8 @@ export default function ContactScreen() {
             <View style={styles.container}>
                 <Image style={styles.image} resizeMode="contain" source={require('../assets/conversation.png')}/>
                 <View style={styles.contactContainer}>
-                    <Text style={styles.h1}>Onko sinulla kysyttävää?</Text>
-                    <Text style={styles.h2}>Asiakaspalvelu:</Text>
+                    <Text style={styles.h1}>{t('question')}</Text>
+                    <Text style={styles.h2}>{t('customerservice')}</Text>
                     <Text style={styles.text}>Myynti@iloranta.fi</Text>
                     <Text style={styles.text}>+358 50343 7770</Text>
                     <Text style={[styles.text, {marginTop: 8}]}>Rukkoilantie 129</Text>
@@ -27,7 +31,7 @@ export default function ContactScreen() {
                     accessible={true}
                     accessibilityLabel="Soita meille!"
                      onPress={callUs}>
-                        <Text style={styles.buttonText}>Soita meille tästä</Text>
+                        <Text style={styles.buttonText}>{t('question')}</Text>
                     </TouchableHighlight>
                 </View>
                 <SocialMediaButtons height={42} width={42} margin={15} width2={55} height2={55} fontSize={18}/>

@@ -6,7 +6,11 @@ import * as Linking from 'expo-linking';
 
 import events from '../data/events';
 
+import {useTranslation} from 'react-i18next';
+
 export default function ContactScreen() {
+
+    const {t, i18n} = useTranslation();
 
     const renderItem = ({ item }) => (
         <Item 
@@ -43,8 +47,8 @@ export default function ContactScreen() {
             <View style={styles.container}>
                 <View style={styles.eventContainer}>
                 <View accessible={true}>
-                    <Text style={styles.h1}>Ilorannan tapahtumat</Text>
-                    <Text style={styles.text}>Täältä näet Ilorannassa sijaitsevat tapahtumat. Tapahtumien linkit vievät Ilorannan kotisivuille.</Text>
+                    <Text style={styles.h1}>{t('eventsiniloranta')}</Text>
+                    <Text style={styles.text}>{t('eventlist')}</Text>
                     <FlatList
                         data={events}
                         style={styles.itemContainer}

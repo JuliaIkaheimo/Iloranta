@@ -12,16 +12,21 @@ import ParkingScreen from './screens/parkingScreen';
 import EventScreen from './screens/eventScreen';
 import CustomNavigation from './components/customNavigation';
 
+import {useTranslation} from 'react-i18next';
+
 const Drawer = createDrawerNavigator();
 
 export default function App() {
+
+  const {t, i18n} = useTranslation();
+
   return (
     <>
       <NavigationContainer>
         {/* CustomNavigation contains the custom outfit of the menu. See customNavigation.js */}
         <Drawer.Navigator drawerContent={(props) => <CustomNavigation {...props} />}>
 
-          <Drawer.Screen name = "Etusivu" options={{
+          <Drawer.Screen name = {t('frontpage')} options={{
             
             headerShown: false,
             drawerActiveTintColor:"#FBA00E",
@@ -31,7 +36,7 @@ export default function App() {
             {props => <MainScreen {...props} />}
           </Drawer.Screen>
           
-          <Drawer.Screen name = "Kartta" options={{ 
+          <Drawer.Screen name = {t('map')} options={{ 
             headerShown: false,
             drawerActiveTintColor:"#FBA00E",
             drawerLabelStyle:{fontWeight: "bold", fontSize: 17},
@@ -40,7 +45,7 @@ export default function App() {
             {props => <MapScreen {...props} />}
           </Drawer.Screen>
 
-          <Drawer.Screen name = "Saapuminen" options={{ 
+          <Drawer.Screen name = {t('arrival')} options={{ 
             headerShown: false,
             drawerActiveTintColor:"#FBA00E",
             drawerLabelStyle:{fontWeight: "bold", fontSize: 17},
@@ -49,7 +54,7 @@ export default function App() {
             {props => <ParkingScreen {...props} />}
           </Drawer.Screen>
 
-          <Drawer.Screen name = "Tapahtumat" options={{
+          <Drawer.Screen name = {t('events')} options={{
             headerShown: false,
             drawerActiveTintColor:"#FBA00E",
             drawerLabelStyle:{fontWeight: "bold", fontSize: 17},
@@ -58,7 +63,7 @@ export default function App() {
             {props => <EventScreen {...props} />}
           </Drawer.Screen>
 
-          <Drawer.Screen name = "Yhteystiedot" options={{ 
+          <Drawer.Screen name = {t('contact')} options={{ 
             headerShown: false,
             drawerActiveTintColor:"#FBA00E",
             drawerLabelStyle:{fontWeight: "bold", fontSize: 17},

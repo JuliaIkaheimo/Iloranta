@@ -4,7 +4,8 @@
       "question":"Onko sinulla kysyttävää?",
       "frontpage":"Etusivu",
       "map":"Kartta",
-      "parking":"Pysäköinti",
+      "arrival":"Saapuminen",
+      "events":"Tapahtumat",
       "contact":"Yhteystiedot",
       "socialmedia":"Seuraa meitä somessa:",
       "customerservice":"Asiakaspalvelu:",
@@ -16,8 +17,11 @@
       "naturalsites":"Luontokohteet",
       "mainbuildings":"Päärakennukset",
       "parkinglots":"Parkkipaikat",
-      "ilorantaparking":"Pysäköiminen Ilorannassa",
+      "arrivaltoiloranta":"Saapuminen Ilorantaan",
+      "arrivalinstructions":"Aja päärakennuksen pihaan kartan osoittamasta tienhaarasta. Käy ilmoittautumassa ja tiedustelemassa majoituksen sijainti. \n \nVoit etsiä valikosta majoituspaikkasi ja katsoa kartalta sopivan pysäköintipaikan.",
       "selectaccommodation":"Etsi valikosta majoituspaikkasi ja katso kartalta sopivin pysäköintipaikka.",
-      "mostsuitableparking":"Sinulle sopivin parkkipaikka on:"
+      "mostsuitableparking":"Sinulle sopivin parkkipaikka on:",
+      "eventsiniloranta":"Ilorannan tapahtumat",
+      "eventlist":"Täältä näet Ilorannassa sijaitsevat tapahtumat. Tapahtumien linkit vievät Ilorannan kotisivuille."
     }
   }
